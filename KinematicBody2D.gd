@@ -42,3 +42,12 @@ func _physics_process(delta):
 		$SanityRecharge.play()
 	if Input.is_action_just_released("ui_focus"):
 		$SanityRecharge.stop()
+
+func hit():
+	$Sprite.modulate = Color(100, 100, 100)
+	print("ouch!")
+	sanity -= 20
+	yield(get_tree().create_timer(0.5), "timeout")
+	$Sprite.modulate = Color(1, 1, 1)
+
+
