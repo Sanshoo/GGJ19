@@ -18,11 +18,13 @@ func _process(delta):
 	if player.sanity <= 0 and game_state == "ingame":
 		fade = fade_scene.instance()
 		$Camera.add_child(fade)
+		fade.z_index = 5
 		remove_child($GUI)
 		game_state = "over"
 
 func victory():
 	win = win_scene.instance()
 	$Camera.add_child(win)
+	win.z_index = 5
 	remove_child($GUI)
 	game_state = "over"
