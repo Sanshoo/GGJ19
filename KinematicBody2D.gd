@@ -8,6 +8,10 @@ var max_sanity = 100
 var sanity_step = 5
 var sanity_hit = 20
 var n_pos
+var textureback = preload("res://assets/char1back.png")
+var texturesideleft = preload("res://assets/char1side1.png")
+var texturesideright = preload("res://assets/char1side2.png")
+var texturefront = preload("res://assets/char1front.png")
 
 func _ready():
 	n_pos = position
@@ -17,12 +21,16 @@ func _physics_process(delta):
 	var move_vec = Vector2(0, 0)
 	if Input.is_action_just_pressed("ui_up"):
 		move_vec.y -= tile_size
+		$PlayerSprite.texture = textureback
 	elif Input.is_action_just_pressed("ui_left"):
 		move_vec.x -= tile_size
+		$PlayerSprite.texture = texturesideright
 	elif Input.is_action_just_pressed("ui_right"):
 		move_vec.x += tile_size
+		$PlayerSprite.texture = texturesideleft
 	elif Input.is_action_just_pressed("ui_down"):
 		move_vec.y += tile_size
+		$PlayerSprite.texture = texturefront
 	if (!move_and_collide(move_vec, true, true, true) or 
 			move_and_collide(move_vec, true, true, true).collider.name != "Walls"):
 		move_and_collide(move_vec)
