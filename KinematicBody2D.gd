@@ -3,6 +3,7 @@ extends KinematicBody2D
 var tile_size = 64
 
 var sanity = 100 # (current sanity)
+var sanity_recharge = 30
 var max_sanity = 100
 var sanity_step = 5
 var n_pos
@@ -29,3 +30,9 @@ func _physics_process(delta):
 	if position != n_pos:
 		sanity -= sanity_step
 		n_pos = position
+	if Input.is_action_pressed("ui_focus"):
+		self.modulate = Color(0.7, 6, 6)
+		if sanity < max_sanity:
+			sanity += delta*sanity_recharge
+	else:
+		self.modulate = Color(1, 1, 1)
