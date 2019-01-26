@@ -2,8 +2,13 @@ extends KinematicBody2D
 
 var tile_size = 64
 
+var sanity = 100 # (current sanity)
+var max_sanity = 100
+var sanity_step = 5
+var n_pos
+
 func _ready():
-	pass
+	n_pos = position
 
 func _physics_process(delta):
 	# movement
@@ -16,5 +21,11 @@ func _physics_process(delta):
 		move_vec.x += tile_size
 	elif Input.is_action_just_pressed("ui_down"):
 		move_vec.y += tile_size
-	print (move_vec)
-	move_and_collide(move_vec)
+	if (!move_and_collide(move_vec, true, true, true) or 
+			move_and_collide(move_vec, true, true, true).collider.name != "Walls"):
+		move_and_collide(move_vec)
+	
+	# sanity
+	if position != n_pos:
+		sanity -= sanity_step
+		n_pos = position

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FX LOST.wav-d9600504b910c2e453d9ed8eb76d420d.sample"
+
+[deps]
+
+source_file="res://assets/offgame/FX LOST.wav"
+dest_files=[ "res://.import/FX LOST.wav-d9600504b910c2e453d9ed8eb76d420d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

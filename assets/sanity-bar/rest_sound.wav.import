@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rest_sound.wav-a53a622cabb94f491c2ee07d3c9be1cf.sample"
+
+[deps]
+
+source_file="res://assets/sanity-bar/rest_sound.wav"
+dest_files=[ "res://.import/rest_sound.wav-a53a622cabb94f491c2ee07d3c9be1cf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
