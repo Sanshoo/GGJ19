@@ -4,10 +4,13 @@ onready var player = $Player
 onready var sanitybar = $"GUI/SanityBar"
 var game_state = "ingame"
 var fade_scene
+var win_scene
 var fade
+var win
 
 func _ready():
 	fade_scene = preload("res://GameOver.tscn") # MUDAR QUANDO ORGANIZAR LUGAR DAS CENAS
+	win_scene = preload("res://GameWon.tscn")
 
 func _process(delta):
 	sanitybar.value = player.sanity
@@ -17,3 +20,9 @@ func _process(delta):
 		$Camera.add_child(fade)
 		remove_child($GUI)
 		game_state = "over"
+
+func victory():
+	win = win_scene.instance()
+	$Camera.add_child(win)
+	remove_child($GUI)
+	game_state = "over"

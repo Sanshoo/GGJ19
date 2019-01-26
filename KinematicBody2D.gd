@@ -36,9 +36,8 @@ func _physics_process(delta):
 			sanity += delta*sanity_recharge
 	else:
 		self.modulate = Color(1, 1, 1)
-#		$SanityRecharge.playing = false
 
-	# audios
+	# sfx
 	if Input.is_action_just_pressed("ui_focus"):
 		$SanityRecharge.play()
 	if Input.is_action_just_released("ui_focus"):
