@@ -8,10 +8,6 @@ var max_sanity = 100
 var sanity_step = 5
 var sanity_hit = 20
 var n_pos
-var textureback = preload("res://assets/char1back.png")
-var texturesideleft = preload("res://assets/char1side1.png")
-var texturesideright = preload("res://assets/char1side2.png")
-var texturefront = preload("res://assets/char1front.png")
 
 func _ready():
 	n_pos = position
@@ -20,17 +16,17 @@ func _physics_process(delta):
 	# movement
 	var move_vec = Vector2(0, 0)
 	if Input.is_action_just_pressed("ui_up"):
+		$Sprite.animation = "up"
 		move_vec.y -= tile_size
-		$PlayerSprite.texture = textureback
 	elif Input.is_action_just_pressed("ui_left"):
+		$Sprite.animation = "left"
 		move_vec.x -= tile_size
-		$PlayerSprite.texture = texturesideright
 	elif Input.is_action_just_pressed("ui_right"):
+		$Sprite.animation = "right"
 		move_vec.x += tile_size
-		$PlayerSprite.texture = texturesideleft
 	elif Input.is_action_just_pressed("ui_down"):
+		$Sprite.animation = "down"
 		move_vec.y += tile_size
-		$PlayerSprite.texture = texturefront
 	if (!move_and_collide(move_vec, true, true, true) or 
 			move_and_collide(move_vec, true, true, true).collider.name != "Walls"):
 		move_and_collide(move_vec)
@@ -55,7 +51,16 @@ func _physics_process(delta):
 func hit():
 	$Sprite.modulate = Color(100, 100, 100)
 	sanity -= 20
-	move_and_collide( Vector2(0, tile_size))
+	match $Sprite.animation:
+		"up":
+			move_and_collide( Vector2(0, tile_size))
+		"down":
+			move_and_collide( Vector2(0, -tile_size))
+		"right":
+			move_and_collide( Vector2(-tile_size, 0))
+		"left":
+			move_and_collide( Vector2(tile_size, 0))
+			
 	yield(get_tree().create_timer(0.5), "timeout")
 	$Sprite.modulate = Color(1, 1, 1)
 
