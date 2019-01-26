@@ -6,6 +6,7 @@ var sanity = 100 # (current sanity)
 var sanity_recharge = 30
 var max_sanity = 100
 var sanity_step = 5
+var sanity_hit = 20
 var n_pos
 
 func _ready():
@@ -45,8 +46,8 @@ func _physics_process(delta):
 
 func hit():
 	$Sprite.modulate = Color(100, 100, 100)
-	print("ouch!")
 	sanity -= 20
+	move_and_collide( Vector2(0, tile_size))
 	yield(get_tree().create_timer(0.5), "timeout")
 	$Sprite.modulate = Color(1, 1, 1)
 
