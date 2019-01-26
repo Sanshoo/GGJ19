@@ -55,5 +55,5 @@ ui_focus={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.152941, 0.054902, 0.141176, 1 )
+environment/default_clear_color=Color( 0.123596, 0.13052, 0.234375, 1 )
 environment/default_environment="res://default_env.tres"
