@@ -59,7 +59,7 @@ func _physics_process(delta):
 func hit():
 	stunned = true
 	$Sprite.modulate = Color(100, 100, 100)
-	sanity -= 20
+	sanity -= sanity_hit
 	match $Sprite.animation:
 		"up":
 			move_and_collide( Vector2(0, tile_size))
