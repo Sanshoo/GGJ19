@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
@@ -55,10 +55,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 
 extents = Vector2( 31, 31 )
-
-[sub_resource type="RectangleShape2D" id=5]
-
-extents = Vector2( 151, 10 )
 
 [node name="Game" type="Node" groups=[
 "master",
@@ -339,9 +335,4 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Wolf"]
 scale = Vector2( 0.567303, 0.63 )
 texture = ExtResource( 19 )
-
-[node name="deadline" type="Area2D" parent="Wolf"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wolf/deadline"]
-shape = SubResource( 5 )
 

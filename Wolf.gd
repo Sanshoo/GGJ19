@@ -3,11 +3,12 @@ extends Node2D
 var game
 var player
 var camera
-var dead_line = 670
-var wolf_speed = 48
+var active = true
+var nearby = false
+var distance_dif
+var wolf_speed = 68
 
 func _ready():
-	$deadline.connect("body_entered", self, "_on_player_entered")
 	game = get_tree().get_nodes_in_group("master")[0]
 	player = get_tree().get_nodes_in_group("player")[0]
 	camera = get_tree().get_nodes_in_group("camera")[0]
@@ -15,13 +16,19 @@ func _ready():
 	
 
 func _process(delta):
-	if $deadline.position.y > camera.screen_bot:
-		self.position.y -= wolf_speed*delta*2
-	else:
-		self.position.y -= delta * wolf_speed
-
-func _on_player_entered(body):
-	if body.is_in_group("player"):
-		yield(get_tree().create_timer(1.0),"timeout")
-		if $deadline.position.y <= player.position.y:
-			game.game_over() 
+	distance_dif = self.global_position.y - player.global_position.y
+	if active:
+		if distance_dif > 350:
+			self.position.y -= delta * wolf_speed * 3
+		elif nearby:
+			self.position.y -= delta * wolf_speed * 0.6
+		else:
+			self.position.y -= delta * wolf_speed
+		
+		if distance_dif <= 20:
+			nearby = true
+			yield(get_tree().create_timer(1.0),"timeout")
+			if distance_dif <= 0:
+				game.game_over()
+			else:
+				nearby = false
