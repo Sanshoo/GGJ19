@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/victory.png-92571b48ea62d6eafb3d92203162c10d.stex"
+path="res://.import/black-fade.png-f1f5dd237e20db296e9f169b51b0f4f8.stex"
 
 [deps]
 
-source_file="res://assets/offgame/victory.png"
-dest_files=[ "res://.import/victory.png-92571b48ea62d6eafb3d92203162c10d.stex" ]
+source_file="res://assets/offgame/legacy/black-fade.png"
+dest_files=[ "res://.import/black-fade.png-f1f5dd237e20db296e9f169b51b0f4f8.stex" ]
 
 [params]
 

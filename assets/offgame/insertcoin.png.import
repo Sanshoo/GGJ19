@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game-over.png-ac4e2afc28d663de6406506a5e25bc43.stex"
+path="res://.import/insertcoin.png-f2bd6dca61c3c3157aa3b18168614863.stex"
 
 [deps]
 
-source_file="res://assets/offgame/game-over.png"
-dest_files=[ "res://.import/game-over.png-ac4e2afc28d663de6406506a5e25bc43.stex" ]
+source_file="res://assets/offgame/insertcoin.png"
+dest_files=[ "res://.import/insertcoin.png-f2bd6dca61c3c3157aa3b18168614863.stex" ]
 
 [params]
 

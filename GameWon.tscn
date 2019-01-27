@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/offgame/black-fade.png" type="Texture" id=1]
-[ext_resource path="res://assets/offgame/victory.png" type="Texture" id=2]
-[ext_resource path="res://assets/offgame/FX WIN.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/offgame/legacy/black-fade.png" type="Texture" id=1]
+[ext_resource path="res://assets/offgame/legacy/victory.png" type="Texture" id=2]
+[ext_resource path="res://assets/offgame/legacy/FX WIN.wav" type="AudioStream" id=3]
 
 [node name="GameOver" type="Sprite"]
 texture = ExtResource( 1 )

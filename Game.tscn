@@ -204,7 +204,6 @@ region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="obstacles" type="Node2D" parent="Level"]
-editor/display_folded = true
 
 [node name="arvore" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true

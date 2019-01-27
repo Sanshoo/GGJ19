@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black-fade.png-9445df978556d80c597de972ca65137c.stex"
+path="res://.import/gameover-flavor.png-4c7164bc3776f6d775293f477fd102dc.stex"
 
 [deps]
 
-source_file="res://assets/offgame/black-fade.png"
-dest_files=[ "res://.import/black-fade.png-9445df978556d80c597de972ca65137c.stex" ]
+source_file="res://assets/offgame/gameover-flavor.png"
+dest_files=[ "res://.import/gameover-flavor.png-4c7164bc3776f6d775293f477fd102dc.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/FX WIN.wav-174cd2b3a4664c4dd2a27aa375bf8825.sample"
+path="res://.import/FX LOST.wav-d20c1d4aab5cf4c52c84743f265e40b7.sample"
 
 [deps]
 
-source_file="res://assets/offgame/FX WIN.wav"
-dest_files=[ "res://.import/FX WIN.wav-174cd2b3a4664c4dd2a27aa375bf8825.sample" ]
+source_file="res://assets/offgame/legacy/FX LOST.wav"
+dest_files=[ "res://.import/FX LOST.wav-d20c1d4aab5cf4c52c84743f265e40b7.sample" ]
 
 [params]
 
