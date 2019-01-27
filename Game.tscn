@@ -15,8 +15,8 @@
 [ext_resource path="res://assets/obstacles/arbusto-2.png" type="Texture" id=13]
 [ext_resource path="res://assets/groundtree.png" type="Texture" id=14]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=15]
-[ext_resource path="res://assets/char1side2.png" type="Texture" id=16]
-[ext_resource path="res://assets/char1side1.png" type="Texture" id=17]
+[ext_resource path="res://assets/char1side1.png" type="Texture" id=16]
+[ext_resource path="res://assets/char1side2.png" type="Texture" id=17]
 [ext_resource path="res://assets/char1back.png" type="Texture" id=18]
 [ext_resource path="res://assets/char1front.png" type="Texture" id=19]
 [ext_resource path="res://assets/sanity-bar/rest_sound.wav" type="AudioStream" id=20]
@@ -25,11 +25,11 @@
 [ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=23]
 [ext_resource path="res://Camera2D.gd" type="Script" id=24]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 32, 32 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
@@ -38,19 +38,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=3]
+
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+extents = Vector2( 32, 32 )
+
 [sub_resource type="RectangleShape2D" id=5]
 
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=6]
-
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=7]
-
-extents = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=6]
 
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
@@ -59,15 +59,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=7]
 
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=8]
 
 extents = Vector2( 64, 32 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=9]
 
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -76,33 +76,33 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=10]
 
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=11]
 
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=12]
 
-extents = Vector2( 32, 32 )
+extents = Vector2( 31, 31 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=13]
 
 extents = Vector2( 32, 1408 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=14]
 
 animations = [ {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ) ],
@@ -116,7 +116,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=15]
 
 extents = Vector2( 31, 31 )
 
@@ -141,7 +141,7 @@ position = Vector2( 416, -1888 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/victory"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="walls" type="Node2D" parent="Level"]
 editor/display_folded = true
@@ -205,131 +205,290 @@ region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="obstacles" type="Node2D" parent="Level"]
 
-[node name="arvore" type="StaticBody2D" parent="Level/obstacles"]
+[node name="arvore2" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 416, 352 )
+position = Vector2( 416, 56 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/arvore"]
-frames = SubResource( 4 )
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/arvore2"]
+frames = SubResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arvore"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arvore2"]
 visible = false
+shape = SubResource( 3 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/arvore2"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arvore2/Hitbox"]
+position = Vector2( -64, 0 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/obstacles/arvore2/Hitbox"]
+position = Vector2( 64, 0 )
 shape = SubResource( 5 )
 
-[node name="Hitbox" type="Area2D" parent="Level/obstacles/arvore"]
+[node name="Timer" type="Timer" parent="Level/obstacles/arvore2"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco4" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
+position = Vector2( 352, -1136 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arvore/Hitbox"]
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco4"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco4"]
 position = Vector2( -64, 0 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/obstacles/arvore/Hitbox"]
-position = Vector2( 64, 0 )
 shape = SubResource( 7 )
 
-[node name="Timer" type="Timer" parent="Level/obstacles/arvore"]
-wait_time = 1.5
-autostart = true
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco4"]
 
-[node name="tronco" type="StaticBody2D" parent="Level/obstacles"]
-editor/display_folded = true
-position = Vector2( 416, 224 )
-script = ExtResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco"]
-frames = SubResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco"]
-position = Vector2( -64, 0 )
-shape = SubResource( 11 )
-
-[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco4/Hitbox"]
 position = Vector2( 32, 0 )
-shape = SubResource( 12 )
+shape = SubResource( 8 )
 
-[node name="Timer" type="Timer" parent="Level/obstacles/tronco"]
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco4"]
 wait_time = 1.5
 autostart = true
 
-[node name="tronco2" type="StaticBody2D" parent="Level/obstacles"]
+[node name="tronco6" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 416, -160 )
+position = Vector2( 352, -1424 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco6"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco6"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco6/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco6"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco8" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 352, -1632 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+state = false
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco8"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco8"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco8/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco8"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco10" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 352, -1760 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+state = false
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco10"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco10"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco10/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco10"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco3" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 479, -992 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+state = false
 
-[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco2"]
-frames = SubResource( 10 )
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco3"]
+frames = SubResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco3"]
 position = Vector2( -64, 0 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
-[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco2"]
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco2/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco3/Hitbox"]
 position = Vector2( 32, 0 )
-shape = SubResource( 12 )
+shape = SubResource( 8 )
 
-[node name="Timer" type="Timer" parent="Level/obstacles/tronco2"]
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco3"]
 wait_time = 1.5
 autostart = true
 
-[node name="arbusto" type="StaticBody2D" parent="Level/obstacles"]
+[node name="tronco7" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 416, 32 )
+position = Vector2( 480, -1568 )
+scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/arbusto"]
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco7"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco7"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco7/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco7"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco9" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 480, -1696 )
+scale = Vector2( -1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco9"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco9"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco9/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco9"]
+wait_time = 1.5
+autostart = true
+
+[node name="tronco5" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 479, -1280 )
+scale = Vector2( -1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+state = false
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/tronco5"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco5"]
+position = Vector2( -64, 0 )
+shape = SubResource( 7 )
+
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/tronco5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/tronco5/Hitbox"]
+position = Vector2( 32, 0 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="Level/obstacles/tronco5"]
+wait_time = 1.5
+autostart = true
+
+[node name="arbusto2" type="StaticBody2D" parent="Level/obstacles"]
+editor/display_folded = true
+position = Vector2( 416, -656 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Level/obstacles/arbusto2"]
 position = Vector2( 0, -32 )
-frames = SubResource( 13 )
+frames = SubResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arbusto"]
-shape = SubResource( 16 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arbusto2"]
+shape = SubResource( 10 )
 
-[node name="Hitbox" type="Area2D" parent="Level/obstacles/arbusto"]
+[node name="Hitbox" type="Area2D" parent="Level/obstacles/arbusto2"]
 editor/display_folded = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arbusto/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/obstacles/arbusto2/Hitbox"]
 position = Vector2( 0, -64 )
-shape = SubResource( 17 )
+shape = SubResource( 11 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/obstacles/arbusto/Hitbox"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/obstacles/arbusto2/Hitbox"]
 position = Vector2( 64, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 11 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level/obstacles/arbusto/Hitbox"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level/obstacles/arbusto2/Hitbox"]
 position = Vector2( 0, 64 )
-shape = SubResource( 17 )
+shape = SubResource( 11 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level/obstacles/arbusto/Hitbox"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level/obstacles/arbusto2/Hitbox"]
 position = Vector2( -64, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 11 )
 
-[node name="Timer" type="Timer" parent="Level/obstacles/arbusto"]
+[node name="Timer" type="Timer" parent="Level/obstacles/arbusto2"]
 wait_time = 1.5
 autostart = true
 
 [node name="objects" type="Node2D" parent="Level"]
-editor/display_folded = true
-
-[node name="bush-test" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 416, -1120 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test"]
-visible = false
-shape = SubResource( 14 )
 
 [node name="bush-test2" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 224 )
+position = Vector2( 544, 184 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test2"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -337,11 +496,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test2"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test59" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 544, -528 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test59"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test59"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test50" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 288, 736 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test50"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -349,11 +526,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test50"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test51" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 352, 736 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test51"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -361,11 +541,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test51"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test52" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 416, 736 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test52"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -373,11 +556,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test52"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test53" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 479, 736 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test53"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -385,11 +571,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test53"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test54" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 544, 736 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test54"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -397,11 +586,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test54"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test3" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 160 )
+position = Vector2( 544, 120 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test3"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -409,11 +601,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test3"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test56" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 544, -592 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test56"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test56"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test4" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 96 )
+position = Vector2( 544, 56 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test4"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -421,11 +631,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test4"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test57" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 544, -656 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test57"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test57"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test5" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 32 )
+position = Vector2( 544, -8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test5"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -433,11 +661,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test5"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test58" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 544, -720 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test58"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test58"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test6" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -32 )
+position = Vector2( 544, -72 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test6"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -445,11 +691,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test6"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test55" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 544, -784 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test55"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test55"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test7" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -32 )
+position = Vector2( 288, -72 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test7"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -457,11 +721,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test7"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test62" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 288, -784 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test62"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test62"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test8" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 32 )
+position = Vector2( 288, -8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test8"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -469,11 +751,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test8"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test60" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 288, -720 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test60"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test60"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test9" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 96 )
+position = Vector2( 288, 56 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test9"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -481,11 +781,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test9"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test64" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 288, -656 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test64"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test64"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test10" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 160 )
+position = Vector2( 288, 120 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test10"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -493,11 +811,29 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test10"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
+
+[node name="bush-test63" type="StaticBody2D" parent="Level/objects"]
+editor/display_folded = true
+position = Vector2( 288, -592 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test63"]
+scale = Vector2( 0.294931, 0.273504 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test63"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="bush-test11" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 224 )
+position = Vector2( 288, 184 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test11"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -505,203 +841,89 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test11"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="bush-test12" type="StaticBody2D" parent="Level/objects"]
+[node name="bush-test61" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -416 )
+position = Vector2( 288, -528 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test12"]
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test61"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test61"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="bush-test13" type="StaticBody2D" parent="Level/objects"]
+[node name="bush-test65" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -480 )
+position = Vector2( 288, -464 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test13"]
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test65"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test65"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="bush-test14" type="StaticBody2D" parent="Level/objects"]
+[node name="bush-test66" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -544 )
+position = Vector2( 544, -464 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test14"]
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test66"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test66"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="bush-test15" type="StaticBody2D" parent="Level/objects"]
+[node name="bush-test67" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -608 )
+position = Vector2( 288, -848 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test15"]
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test67"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test15"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test67"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
-[node name="bush-test16" type="StaticBody2D" parent="Level/objects"]
+[node name="bush-test68" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -672 )
+position = Vector2( 544, -848 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test16"]
+[node name="Sprite" type="Sprite" parent="Level/objects/bush-test68"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test16"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test68"]
 visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test17" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 288, -736 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test17"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test17"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test18" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -736 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test18"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test18"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test19" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -672 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test19"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test19"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test20" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -608 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test20"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test20"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test21" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -544 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test21"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test21"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test22" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -480 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test22"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test22"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test23" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -416 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test23"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test23"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test24" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 416, -1184 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test24"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test24"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test25" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 416, -1248 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test25"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test25"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test26" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 416, -1312 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test26"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test26"]
-visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test27" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 416, -1376 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test27"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test27"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test28" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 544, -1504 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test28"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -709,23 +931,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test28"]
 visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test29" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -1568 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test29"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test29"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test30" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 544, -1632 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test30"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -733,23 +946,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test30"]
 visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test31" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 544, -1696 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test31"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test31"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test32" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 544, -1760 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test32"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -757,11 +961,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test32"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test33" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 544, -1824 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test33"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -769,11 +976,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test33"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test34" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 288, -1504 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test34"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -781,11 +991,14 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test34"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test35" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 288, -1568 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test35"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -793,23 +1006,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test35"]
 visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test36" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 288, -1632 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test36"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test36"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test37" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 288, -1696 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test37"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -817,23 +1020,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test37"]
 visible = false
-shape = SubResource( 14 )
-
-[node name="bush-test38" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
-position = Vector2( 288, -1760 )
-
-[node name="Sprite" type="Sprite" parent="Level/objects/bush-test38"]
-scale = Vector2( 0.294931, 0.273504 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test38"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test39" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 288, -1824 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test39"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -841,11 +1034,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test39"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test40" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 288, -1888 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test40"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -853,11 +1048,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test40"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test41" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 352, -1888 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test41"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -865,11 +1062,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test41"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test42" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 479, -1888 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test42"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -877,11 +1076,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test42"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test43" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 544, -1888 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test43"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -889,11 +1090,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test43"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test44" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 544, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test44"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -901,11 +1104,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test44"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test45" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 480, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test45"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -913,11 +1118,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test45"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test46" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 416, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test46"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -925,11 +1132,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test46"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test47" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 354, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test47"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -937,11 +1146,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test47"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test48" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 288, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test48"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -949,11 +1160,13 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test48"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="bush-test49" type="StaticBody2D" parent="Level/objects"]
-editor/display_folded = true
 position = Vector2( 288, -1952 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test49"]
 scale = Vector2( 0.294931, 0.273504 )
@@ -961,21 +1174,21 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test49"]
 visible = false
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="wall-left" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 224, -576 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/wall-left"]
-shape = SubResource( 15 )
+shape = SubResource( 13 )
 
 [node name="wall-right" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
 position = Vector2( 608, -576 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/wall-right"]
-shape = SubResource( 15 )
+shape = SubResource( 13 )
 
 [node name="Player" type="KinematicBody2D" parent="." groups=[
 "player",
@@ -988,11 +1201,11 @@ script = ExtResource( 15 )
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 0, -16 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 8 )
+frames = SubResource( 14 )
 animation = "up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 9 )
+shape = SubResource( 15 )
 
 [node name="SanityRecharge" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 20 )
