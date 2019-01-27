@@ -4,7 +4,9 @@ var tile_size = 64
 var stunned = false
 
 var sanity = 100 # (current sanity)
+var recharging = false
 var sanity_recharge = 30
+var sanity_thereshold = 33
 var max_sanity = 100
 var sanity_step = 5
 var sanity_hit = 20
@@ -37,14 +39,16 @@ func _physics_process(delta):
 	if position != n_pos:
 		sanity -= sanity_step
 		n_pos = position
-	if Input.is_action_just_pressed("ui_focus"):
+	if Input.is_action_just_pressed("ui_focus") and sanity < sanity_thereshold:
 		m_pos = position
-	elif Input.is_action_pressed("ui_focus") and m_pos == position:
+		recharging = true
+	elif Input.is_action_pressed("ui_focus") and m_pos == position and recharging:
 		self.modulate = Color(0.7, 6, 6)
 		if sanity < max_sanity:
 			sanity += delta*sanity_recharge
 	else:
 		self.modulate = Color(1, 1, 1)
+		recharging = false
 
 	# sfx
 	if Input.is_action_just_pressed("ui_focus"):
@@ -66,7 +70,7 @@ func hit():
 		"left":
 			move_and_collide( Vector2(tile_size, 0))
 			
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(0.8), "timeout")
 	stunned = false
 	$Sprite.modulate = Color(1, 1, 1)
 
