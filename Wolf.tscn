@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Wolf.gd" type="Script" id=1]
+[ext_resource path="res://assets/wolf.png" type="Texture" id=2]
+
+[node name="Wolf" type="Node2D"]
+editor/display_folded = true
+position = Vector2( 224, 672 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.567303, 0.63 )
+texture = ExtResource( 2 )
+
