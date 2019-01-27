@@ -44,11 +44,11 @@ func _physics_process(delta):
 		recharging = true
 		get_tree().call_group("hand", "up")
 	elif Input.is_action_pressed("ui_focus") and m_pos == position and recharging:
-		self.modulate = Color(0.7, 6, 6)
+#		self.modulate = Color(0.7, 6, 6)
 		if sanity < max_sanity:
 			sanity += delta*sanity_recharge
 	else:
-		self.modulate = Color(1, 1, 1)
+#		self.modulate = Color(1, 1, 1)
 		recharging = false
 	if Input.is_action_just_released("ui_focus"):
 		get_tree().call_group("hand", "down")

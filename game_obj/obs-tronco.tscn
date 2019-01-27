@@ -6,8 +6,8 @@
 [ext_resource path="res://assets/obstacles/toco-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/obstacle1frame1.png" type="Texture" id=5]
 [ext_resource path="res://assets/obstacle1frame0.png" type="Texture" id=6]
-[ext_resource path="res://assets/obstacle1frame2.png" type="Texture" id=7]
-[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=8]
+[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=7]
+[ext_resource path="res://assets/obstacle1frame5.png" type="Texture" id=8]
 [ext_resource path="res://assets/fx/Saindo do arbusto.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -36,11 +36,11 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-extents = Vector2( 32, 32 )
+extents = Vector2( 32, 24 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
-extents = Vector2( 64, 32 )
+extents = Vector2( 63, 29 )
 
 [node name="tronco" type="StaticBody2D"]
 position = Vector2( 192, 97 )
@@ -50,20 +50,17 @@ __meta__ = {
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 17, 1 )
-scale = Vector2( 0.660156, 0.609375 )
+position = Vector2( 0.974627, 1 )
+scale = Vector2( 0.578809, 0.609375 )
 frames = SubResource( 1 )
-animation = "attack"
-frame = 1
+animation = "active"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -64, 0 )
 shape = SubResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 32, 0 )
