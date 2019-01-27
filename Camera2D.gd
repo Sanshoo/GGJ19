@@ -10,6 +10,7 @@ func _ready():
 	# set min and max y from position2d child nodes
 	max_y = $"../Level/max_y".position.y
 	min_y = $"../Level/min_y".position.y
+	self.position.y = $"../Player".position.y + vertical_offset
 
 func _process(delta):
 	var next_pos = $"../Player".position.y + vertical_offset
