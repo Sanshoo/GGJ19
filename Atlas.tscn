@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://victory.gd" type="Script" id=1]
+[ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 95, 30 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+extents = Vector2( 32, 1408 )
+
+[node name="Atlas" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="min_y" type="Position2D" parent="Level"]
+position = Vector2( 160, 608 )
+
+[node name="max_y" type="Position2D" parent="Level"]
+position = Vector2( 160, 0 )
+
+[node name="victory" type="Area2D" parent="Level"]
+editor/display_folded = true
+position = Vector2( 250, 96 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/victory"]
+position = Vector2( 38, 64 )
+shape = SubResource( 1 )
+
+[node name="constraints" type="Node2D" parent="Level"]
+
+[node name="bush" parent="Level/constraints" instance=ExtResource( 2 )]
+
+[node name="wall-left" type="StaticBody2D" parent="Level/constraints"]
+editor/display_folded = true
+position = Vector2( 32, 352 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-left"]
+shape = SubResource( 13 )
+
+[node name="wall-right" type="StaticBody2D" parent="Level/constraints"]
+editor/display_folded = true
+position = Vector2( 416, 352 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-right"]
+shape = SubResource( 13 )
+
+[node name="obstacles" type="Node2D" parent="Level"]
+
+[node name="arvore" parent="Level/obstacles" instance=ExtResource( 3 )]
+
+[node name="tronco" parent="Level/obstacles" instance=ExtResource( 4 )]
+
+[node name="arbusto" parent="Level/obstacles" instance=ExtResource( 5 )]
+

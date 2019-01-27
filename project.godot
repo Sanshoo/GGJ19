@@ -16,11 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="trilha-na-floresta"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=780
+window/size/width=590
+window/handheld/orientation="portrait"
 
 [importer_defaults]
 

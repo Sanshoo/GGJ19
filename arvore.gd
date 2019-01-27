@@ -9,10 +9,10 @@ func _ready():
 
 func _process(delta):
 	if state and !attacking:
-		$Sprite.frame = 1
+		$Sprite.animation = "active"
 		$Hitbox.monitoring = true
 	if !state and !attacking :
-		$Sprite.frame = 0
+		$Sprite.animation = "inactive"
 		$Hitbox.monitoring = false
 
 func _on_timeout():
@@ -21,9 +21,9 @@ func _on_timeout():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		attacking = true
-		$Sprite.frame = 2
+		$Sprite.animation = "attack"
 		body.hit()
-		yield(get_tree().create_timer(0.5), "timeout")
-		$Sprite.frame = 1
+		yield(get_tree().create_timer(0.7), "timeout")
+		$Sprite.animation = "active"
 		attacking = false
 		

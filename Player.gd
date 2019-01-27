@@ -8,7 +8,7 @@ var recharging = false
 var sanity_recharge = 30
 var sanity_thereshold = 33
 var max_sanity = 100
-var sanity_step = 5
+var sanity_step = 3
 var sanity_hit = 20
 var n_pos
 var m_pos

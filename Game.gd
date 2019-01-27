@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 onready var player = $Player
 onready var sanitybar = $"GUI/SanityBar"
@@ -32,7 +32,7 @@ func _process(delta):
 
 func victory():
 	win = win_scene.instance()
-	$Camera.add_child(win)
+	get_tree().change_scene_to(win)
 	win.z_index = 5
 	remove_child($GUI)
 	game_state = "over"

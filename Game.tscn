@@ -14,9 +14,9 @@
 [ext_resource path="res://assets/obstacles/arbusto-1.png" type="Texture" id=12]
 [ext_resource path="res://assets/obstacles/arbusto-2.png" type="Texture" id=13]
 [ext_resource path="res://assets/groundtree.png" type="Texture" id=14]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=15]
-[ext_resource path="res://assets/char1side1.png" type="Texture" id=16]
-[ext_resource path="res://assets/char1side2.png" type="Texture" id=17]
+[ext_resource path="res://Player.gd" type="Script" id=15]
+[ext_resource path="res://assets/char1side2.png" type="Texture" id=16]
+[ext_resource path="res://assets/char1side1.png" type="Texture" id=17]
 [ext_resource path="res://assets/char1back.png" type="Texture" id=18]
 [ext_resource path="res://assets/char1front.png" type="Texture" id=19]
 [ext_resource path="res://assets/sanity-bar/rest_sound.wav" type="AudioStream" id=20]
@@ -97,12 +97,12 @@ extents = Vector2( 32, 1408 )
 animations = [ {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ) ],
@@ -148,56 +148,56 @@ editor/display_folded = true
 z_index = 1
 
 [node name="WallsSprite7" type="Sprite" parent="Level/walls"]
-position = Vector2( 242, -1975.58 )
+position = Vector2( 51, -1859.58 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite8" type="Sprite" parent="Level/walls"]
-position = Vector2( 643, -1975.58 )
+position = Vector2( 452, -1859.58 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite6" type="Sprite" parent="Level/walls"]
-position = Vector2( 242, -1188.58 )
+position = Vector2( 51, -1072.58 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite5" type="Sprite" parent="Level/walls"]
-position = Vector2( 643, -1188.58 )
+position = Vector2( 452, -1072.58 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite4" type="Sprite" parent="Level/walls"]
-position = Vector2( 242, -396.583 )
+position = Vector2( 51, -280.586 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite3" type="Sprite" parent="Level/walls"]
-position = Vector2( 643, -396.583 )
+position = Vector2( 452, -280.586 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite" type="Sprite" parent="Level/walls"]
-position = Vector2( 242, 384 )
+position = Vector2( 51, 499.997 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite2" type="Sprite" parent="Level/walls"]
-position = Vector2( 643, 384 )
+position = Vector2( 452, 499.997 )
 texture = ExtResource( 3 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
@@ -207,7 +207,7 @@ region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="arvore2" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 416, 56 )
+position = Vector2( 224, 32 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -237,7 +237,7 @@ autostart = true
 
 [node name="tronco4" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 352, -1136 )
+position = Vector2( 160, -1120 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -262,7 +262,7 @@ autostart = true
 
 [node name="tronco6" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 352, -1424 )
+position = Vector2( 160, -1376 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -287,7 +287,7 @@ autostart = true
 
 [node name="tronco8" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 352, -1632 )
+position = Vector2( 160, -1632 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -313,7 +313,7 @@ autostart = true
 
 [node name="tronco10" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 352, -1760 )
+position = Vector2( 160, -1760 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -339,7 +339,7 @@ autostart = true
 
 [node name="tronco3" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 479, -992 )
+position = Vector2( 287, -992 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -366,7 +366,7 @@ autostart = true
 
 [node name="tronco7" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 480, -1568 )
+position = Vector2( 288, -1568 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -392,7 +392,7 @@ autostart = true
 
 [node name="tronco9" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 480, -1696 )
+position = Vector2( 288, -1696 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -418,7 +418,7 @@ autostart = true
 
 [node name="tronco5" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 479, -1280 )
+position = Vector2( 287, -1248 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -445,7 +445,7 @@ autostart = true
 
 [node name="arbusto2" type="StaticBody2D" parent="Level/obstacles"]
 editor/display_folded = true
-position = Vector2( 416, -656 )
+position = Vector2( 224, -672 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -485,7 +485,7 @@ autostart = true
 
 [node name="bush-test2" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 184 )
+position = Vector2( 352, 160 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -495,12 +495,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test2"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test59" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -528 )
+position = Vector2( 352, -544 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -510,12 +509,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test59"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test50" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 736 )
+position = Vector2( 96, 736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -525,12 +523,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test50"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test51" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 352, 736 )
+position = Vector2( 160, 736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -540,12 +537,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test51"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test52" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 416, 736 )
+position = Vector2( 224, 736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -555,12 +551,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test52"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test53" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 479, 736 )
+position = Vector2( 287, 736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -570,12 +565,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test53"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test54" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 736 )
+position = Vector2( 352, 736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -585,12 +579,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test54"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test3" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 120 )
+position = Vector2( 352, 96 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -600,12 +593,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test3"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test56" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -592 )
+position = Vector2( 352, -608 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -615,12 +607,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test56"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test4" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, 56 )
+position = Vector2( 352, 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -630,12 +621,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test4"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test57" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -656 )
+position = Vector2( 352, -672 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -645,12 +635,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test57"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test5" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -8 )
+position = Vector2( 352, -32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -660,12 +649,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test5"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test58" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -720 )
+position = Vector2( 352, -736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -675,12 +663,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test58"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test6" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -72 )
+position = Vector2( 352, -96 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -690,12 +677,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test6"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test55" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -784 )
+position = Vector2( 352, -800 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -705,12 +691,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test55"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test7" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -72 )
+position = Vector2( 96, -96 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -720,12 +705,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test7"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test62" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -784 )
+position = Vector2( 96, -800 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -735,12 +719,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test62"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test8" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -8 )
+position = Vector2( 96, -32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -750,12 +733,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test8"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test60" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -720 )
+position = Vector2( 96, -736 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -765,12 +747,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test60"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test9" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 56 )
+position = Vector2( 96, 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -780,12 +761,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test9"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test64" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -656 )
+position = Vector2( 96, -672 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -795,12 +775,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test64"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test10" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 120 )
+position = Vector2( 96, 96 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -810,12 +789,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test10"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test63" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -592 )
+position = Vector2( 96, -608 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -825,12 +803,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test63"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test11" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, 184 )
+position = Vector2( 96, 160 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -840,12 +817,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test11"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test61" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -528 )
+position = Vector2( 96, -544 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -855,12 +831,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test61"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test65" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -464 )
+position = Vector2( 96, -480 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -870,12 +845,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test65"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test66" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -464 )
+position = Vector2( 352, -480 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -885,12 +859,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test66"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test67" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -848 )
+position = Vector2( 96, -864 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -900,12 +873,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test67"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test68" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -848 )
+position = Vector2( 352, -864 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -915,12 +887,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test68"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test28" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -1504 )
+position = Vector2( 352, -1504 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -930,12 +901,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test28"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test30" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -1632 )
+position = Vector2( 352, -1632 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -945,12 +915,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test30"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test32" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -1760 )
+position = Vector2( 352, -1760 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -960,27 +929,22 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test32"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test33" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 544, -1824 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 352, -1824 )
 
 [node name="Sprite" type="Sprite" parent="Level/objects/bush-test33"]
 scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test33"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test34" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -1504 )
+position = Vector2( 96, -1504 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -990,12 +954,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test34"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test35" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 288, -1568 )
+position = Vector2( 96, -1568 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1005,11 +968,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test35"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test37" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 288, -1696 )
+editor/display_folded = true
+position = Vector2( 96, -1696 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1019,11 +982,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test37"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test39" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 288, -1824 )
+editor/display_folded = true
+position = Vector2( 96, -1824 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1033,11 +996,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test39"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test40" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 288, -1888 )
+editor/display_folded = true
+position = Vector2( 96, -1888 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1047,11 +1010,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test40"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test41" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 352, -1888 )
+editor/display_folded = true
+position = Vector2( 160, -1888 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1061,11 +1024,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test41"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test42" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 479, -1888 )
+editor/display_folded = true
+position = Vector2( 288, -1888 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1075,11 +1038,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test42"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test43" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 544, -1888 )
+editor/display_folded = true
+position = Vector2( 352, -1888 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1089,11 +1052,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test43"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test44" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 544, -1952 )
+editor/display_folded = true
+position = Vector2( 352, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1103,11 +1066,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test44"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test45" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 480, -1952 )
+editor/display_folded = true
+position = Vector2( 288, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1117,11 +1080,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test45"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test46" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 416, -1952 )
+editor/display_folded = true
+position = Vector2( 224, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1131,11 +1094,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test46"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test47" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 354, -1952 )
+editor/display_folded = true
+position = Vector2( 160, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1145,11 +1108,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test47"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test48" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 288, -1952 )
+editor/display_folded = true
+position = Vector2( 96, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1159,11 +1122,11 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test48"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="bush-test49" type="StaticBody2D" parent="Level/objects"]
-position = Vector2( 288, -1952 )
+editor/display_folded = true
+position = Vector2( 96, -1952 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1173,19 +1136,18 @@ scale = Vector2( 0.294931, 0.273504 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/bush-test49"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="wall-left" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 224, -576 )
+position = Vector2( 32, -576 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/wall-left"]
 shape = SubResource( 13 )
 
 [node name="wall-right" type="StaticBody2D" parent="Level/objects"]
 editor/display_folded = true
-position = Vector2( 608, -576 )
+position = Vector2( 416, -576 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/objects/wall-right"]
 shape = SubResource( 13 )
