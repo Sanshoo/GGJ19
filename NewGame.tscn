@@ -16,17 +16,17 @@
 [ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=14]
 [ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=15]
 [ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=16]
-[ext_resource path="res://assets/greenwall.png" type="Texture" id=17]
-
-[sub_resource type="RectangleShape2D" id=13]
-
-extents = Vector2( 32, 1408 )
+[ext_resource path="res://assets/greenwall3.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
+extents = Vector2( 32, 1408 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
 extents = Vector2( 95, 30 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 8 ) ],
@@ -50,7 +50,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=4]
 
 extents = Vector2( 31, 31 )
 
@@ -173,7 +173,7 @@ position = Vector2( 32, -800 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-left"]
 position = Vector2( 0, -32 )
-shape = SubResource( 13 )
+shape = SubResource( 1 )
 
 [node name="wall-right" type="StaticBody2D" parent="Level/constraints"]
 editor/display_folded = true
@@ -181,7 +181,7 @@ position = Vector2( 416, -800 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-right"]
 position = Vector2( 0, -32 )
-shape = SubResource( 13 )
+shape = SubResource( 1 )
 
 [node name="arvore" parent="Level/constraints" instance=ExtResource( 3 )]
 position = Vector2( 224, -96 )
@@ -201,7 +201,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/victory"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Player" type="KinematicBody2D" parent="." groups=[
 "player",
@@ -215,11 +215,11 @@ script = ExtResource( 7 )
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( -2, -8 )
 scale = Vector2( 0.0368, 0.0368 )
-frames = SubResource( 14 )
+frames = SubResource( 3 )
 animation = "up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="SanityRecharge" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 12 )
@@ -258,7 +258,6 @@ layer = 1
 motion_scale = Vector2( 1, 0.9 )
 
 [node name="walls" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
 position = Vector2( -2, 0 )
 z_index = 1
 
