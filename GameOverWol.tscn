@@ -3,7 +3,7 @@
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/title/bg.png" type="Texture" id=2]
 [ext_resource path="res://assets/offgame/gameover.png" type="Texture" id=3]
-[ext_resource path="res://assets/offgame/legacy/FX LOST.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/ost/Derrota.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/offgame/gameover-wolf.png" type="Texture" id=5]
 [ext_resource path="res://assets/offgame/gameover-flavor.png" type="Texture" id=6]
 [ext_resource path="res://assets/offgame/insertcoin.png" type="Texture" id=7]
@@ -22,7 +22,6 @@ texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -26.0
 autoplay = true
 
 [node name="wolf" type="Sprite" parent="."]

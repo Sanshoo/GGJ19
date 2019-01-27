@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Vitória.wav-1e03e1d9b653d0bd740a98d3d68e8028.sample"
+
+[deps]
+
+source_file="res://assets/ost/Vitória.wav"
+dest_files=[ "res://.import/Vitória.wav-1e03e1d9b653d0bd740a98d3d68e8028.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
