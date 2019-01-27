@@ -1,445 +1,24 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://victory.gd" type="Script" id=6]
-[ext_resource path="res://Player.gd" type="Script" id=7]
-[ext_resource path="res://assets/char1side2.png" type="Texture" id=8]
-[ext_resource path="res://assets/char1side1.png" type="Texture" id=9]
-[ext_resource path="res://assets/char1back.png" type="Texture" id=10]
-[ext_resource path="res://assets/char1front.png" type="Texture" id=11]
-[ext_resource path="res://assets/sanity-bar/rest_sound.wav" type="AudioStream" id=12]
-[ext_resource path="res://Camera2D.gd" type="Script" id=13]
-[ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=14]
-[ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=15]
-[ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=16]
-[ext_resource path="res://assets/greenwall3.png" type="Texture" id=17]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/ost/Intro Tema Não loope.wav" type="AudioStream" id=19]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-extents = Vector2( 32, 1408 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-extents = Vector2( 95, 30 )
-
-[sub_resource type="SpriteFrames" id=3]
-
-animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=4]
-
-extents = Vector2( 31, 31 )
+[ext_resource path="res://Level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=5]
+[ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=6]
+[ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=7]
+[ext_resource path="res://assets/greenwall3.png" type="Texture" id=8]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/ost/Intro Tema Não loope.wav" type="AudioStream" id=10]
 
 [node name="Game" type="Node" groups=[
 "master",
 ]]
 script = ExtResource( 1 )
 
-[node name="Level" type="Node2D" parent="."]
-editor/display_folded = true
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Level" parent="." instance=ExtResource( 2 )]
 
-[node name="min_y" type="Position2D" parent="Level"]
-position = Vector2( 224, 768 )
-
-[node name="max_y" type="Position2D" parent="Level"]
-position = Vector2( 224, -5462 )
-
-[node name="constraints" type="YSort" parent="Level"]
-editor/display_folded = true
-
-[node name="bush" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, 544 )
-
-[node name="bush2" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 160, 544 )
-
-[node name="bush3" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, 544 )
-
-[node name="bush4" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, 544 )
-
-[node name="bush5" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, 544 )
-
-[node name="bush6" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, 480 )
-
-[node name="bush7" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, 480 )
-
-[node name="bush8" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, 416 )
-
-[node name="bush48" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -800 )
-
-[node name="bush55" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -160.081 )
-
-[node name="bush49" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -800 )
-
-[node name="bush56" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -160.081 )
-
-[node name="bush45" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -864 )
-
-[node name="bush53" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -224.081 )
-
-[node name="bush47" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -864 )
-
-[node name="bush57" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -224.081 )
-
-[node name="bush46" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -928 )
-
-[node name="bush54" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -288.081 )
-
-[node name="bush44" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -928 )
-
-[node name="bush52" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -288.081 )
-
-[node name="bush34" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3040 )
-
-[node name="bush36" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -3040 )
-
-[node name="bush69" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 162, -3168 )
-
-[node name="bush71" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -3168 )
-
-[node name="bush72" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -3168 )
-
-[node name="bush74" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3232 )
-
-[node name="bush75" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -3232 )
-
-[node name="bush76" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -3296 )
-
-[node name="bush77" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3296 )
-
-[node name="bush78" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3296 )
-
-[node name="bush79" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 289, -3840 )
-
-[node name="bush80" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4960 )
-
-[node name="bush87" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 162, -4960 )
-
-[node name="bush100" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 161, -5152 )
-
-[node name="bush92" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 226, -4960 )
-
-[node name="bush103" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 226, -5152 )
-
-[node name="bush105" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 289, -5152 )
-
-[node name="bush108" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -5216 )
-
-[node name="bush109" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 353, -5280 )
-
-[node name="bush112" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -4768 )
-
-[node name="bush82" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4832 )
-
-[node name="bush88" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4896 )
-
-[node name="bush111" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4768 )
-
-[node name="bush83" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4832 )
-
-[node name="bush89" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4896 )
-
-[node name="bush114" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -4768 )
-
-[node name="bush73" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3168 )
-
-[node name="bush63" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -3104 )
-
-[node name="bush37" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3104 )
-
-[node name="bush61" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 162, -2652 )
-
-[node name="bush66" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 162, -2715.5 )
-
-[node name="bush35" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 225, -2589 )
-
-[node name="bush60" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 225, -2652 )
-
-[node name="bush64" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -2715.5 )
-
-[node name="bush70" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -2779 )
-
-[node name="bush38" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -2652 )
-
-[node name="bush65" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -2715.5 )
-
-[node name="bush26" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 353, -5152 )
-
-[node name="bush27" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -5349 )
-
-[node name="bush29" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -5411.24 )
-
-[node name="bush28" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -5347.24 )
-
-[node name="bush30" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 99, -5411.24 )
-
-[node name="bush31" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 162, -5411.24 )
-
-[node name="bush32" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -5411.24 )
-
-[node name="bush33" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -5413 )
-
-[node name="bush9" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, 416 )
-
-[node name="bush10" parent="Level/constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, 480 )
-
-[node name="wall-left" type="StaticBody2D" parent="Level/constraints"]
-editor/display_folded = true
-position = Vector2( 32, -800 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-left"]
-position = Vector2( 0, -32 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/constraints/wall-left"]
-position = Vector2( 0, -2848 )
-shape = SubResource( 1 )
-
-[node name="wall-right" type="StaticBody2D" parent="Level/constraints"]
-editor/display_folded = true
-position = Vector2( 416, -800 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-right"]
-position = Vector2( 0, -32 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/constraints/wall-right"]
-position = Vector2( 0, -2848 )
-shape = SubResource( 1 )
-
-[node name="arvore4" parent="Level/constraints" instance=ExtResource( 3 )]
-position = Vector2( 224, -224.081 )
-
-[node name="arvore8" parent="Level/constraints" instance=ExtResource( 3 )]
-position = Vector2( 226, -4768 )
-
-[node name="arvore7" parent="Level/constraints" instance=ExtResource( 3 )]
-position = Vector2( 289, -3968 )
-state = false
-
-[node name="arvore6" parent="Level/constraints" instance=ExtResource( 3 )]
-position = Vector2( 159, -3678.5 )
-
-[node name="tronco" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 159, -1887 )
-
-[node name="tronco6" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 160, -1758 )
-
-[node name="tronco18" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 99, -5088 )
-state = false
-
-[node name="tronco19" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 99, -5216 )
-
-[node name="tronco15" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 161, -4032 )
-
-[node name="tronco12" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 94, -2779 )
-
-[node name="tronco11" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 96, -2589 )
-state = false
-
-[node name="tronco5" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 161, -1504 )
-
-[node name="tronco3" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 161, -1247 )
-
-[node name="tronco2" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 291, -1951 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="tronco7" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 290, -1822.24 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="tronco16" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 352, -4896 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="tronco17" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 352, -5024 )
-scale = Vector2( -1, 1 )
-
-[node name="tronco14" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 288, -3744 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="tronco13" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 353, -2779 )
-scale = Vector2( -1, 1 )
-
-[node name="tronco10" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 353, -2589 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="tronco4" parent="Level/constraints" instance=ExtResource( 4 )]
-position = Vector2( 289.968, -1376 )
-scale = Vector2( -1, 1 )
-state = false
-
-[node name="arbusto" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 224, -864 )
-
-[node name="arbusto2" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 161, -3904 )
-
-[node name="arbusto5" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 162, -4384 )
-
-[node name="arbusto6" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -4384 )
-state = false
-
-[node name="arbusto7" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 162, -4576 )
-state = false
-
-[node name="arbusto8" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 289, -4576 )
-
-[node name="arbusto3" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 225, -3040 )
-state = false
-
-[node name="arbusto4" parent="Level/constraints" instance=ExtResource( 5 )]
-position = Vector2( 225, -3296 )
-
-[node name="victory" type="Area2D" parent="Level"]
-editor/display_folded = true
-position = Vector2( 225, -5349 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/victory"]
-shape = SubResource( 2 )
-
-[node name="Player" type="KinematicBody2D" parent="." groups=[
-"player",
-]]
-pause_mode = 1
-editor/display_folded = true
-position = Vector2( 224, 416 )
-collision/safe_margin = 1.0
-script = ExtResource( 7 )
-
-[node name="Sprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -2, -8 )
-scale = Vector2( 0.0368, 0.0368 )
-frames = SubResource( 3 )
-animation = "up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 4 )
-
-[node name="SanityRecharge" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 12 )
-volume_db = -32.0
+[node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera" type="Camera2D" parent="." groups=[
 "camera",
@@ -452,7 +31,7 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 13 )
+script = ExtResource( 4 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 1
@@ -466,9 +45,9 @@ margin_top = 21.0
 margin_right = 53.0
 margin_bottom = 131.0
 value = 100.0
-texture_under = ExtResource( 14 )
-texture_over = ExtResource( 15 )
-texture_progress = ExtResource( 16 )
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
 fill_mode = 3
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -485,14 +64,14 @@ z_index = 1
 
 [node name="WallsSprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, -1859.58 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite13" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 50, -2656 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
@@ -502,56 +81,56 @@ __meta__ = {
 
 [node name="WallsSprite14" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 50, -3456 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite15" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 47.5, -4256 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite16" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 47.5, -5056 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -1859.58 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -2656 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -3456 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -4256 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite12" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -5056 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
@@ -561,49 +140,49 @@ __meta__ = {
 
 [node name="WallsSprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, -1072.58 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -1072.58 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 50, -288.081 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -280.586 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, 499.997 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, 499.997 )
-texture = ExtResource( 17 )
+texture = ExtResource( 8 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
-[node name="Wolf" parent="." instance=ExtResource( 18 )]
+[node name="Wolf" parent="." instance=ExtResource( 9 )]
 
 [node name="OST" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 10 )
 autoplay = true
 
