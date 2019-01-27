@@ -8,7 +8,7 @@ var game
 var intro = true
 
 func _ready():
-	game = preload("res://Game.tscn")
+	game = preload("res://Tutorial.tscn")
 	title.modulate.a = 0
 	coin.modulate.a = 0
 	creditz.modulate.a = 0

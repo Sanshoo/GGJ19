@@ -1,0 +1,404 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://victory.gd" type="Script" id=6]
+[ext_resource path="res://Player.gd" type="Script" id=7]
+[ext_resource path="res://assets/char1side1.png" type="Texture" id=8]
+[ext_resource path="res://assets/char1side2.png" type="Texture" id=9]
+[ext_resource path="res://assets/char1back.png" type="Texture" id=10]
+[ext_resource path="res://assets/char1front.png" type="Texture" id=11]
+[ext_resource path="res://assets/sanity-bar/rest_sound.wav" type="AudioStream" id=12]
+[ext_resource path="res://Camera2D.gd" type="Script" id=13]
+[ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=14]
+[ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=15]
+[ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=16]
+[ext_resource path="res://assets/greenwall3.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 32, 1408 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+extents = Vector2( 95, 30 )
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+extents = Vector2( 31, 31 )
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Level" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="min_y" type="Position2D" parent="Level"]
+position = Vector2( 160, 608 )
+
+[node name="max_y" type="Position2D" parent="Level"]
+position = Vector2( 228.5, -2141.24 )
+
+[node name="constraints" type="YSort" parent="Level"]
+
+[node name="bush" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, 544 )
+
+[node name="bush2" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, 544 )
+
+[node name="bush3" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 224, 544 )
+
+[node name="bush4" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, 544 )
+
+[node name="bush5" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, 544 )
+
+[node name="bush6" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, 480 )
+
+[node name="bush7" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, 480 )
+
+[node name="bush8" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, 416 )
+
+[node name="bush40" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -736 )
+
+[node name="bush50" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -96.0809 )
+
+[node name="bush48" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -800 )
+
+[node name="bush55" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -160.081 )
+
+[node name="bush41" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -736 )
+
+[node name="bush58" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -96.0809 )
+
+[node name="bush49" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -800 )
+
+[node name="bush56" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -160.081 )
+
+[node name="bush42" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -992 )
+
+[node name="bush51" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -352.081 )
+
+[node name="bush45" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -864 )
+
+[node name="bush53" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -224.081 )
+
+[node name="bush43" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -992 )
+
+[node name="bush59" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -352.081 )
+
+[node name="bush47" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -864 )
+
+[node name="bush57" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -224.081 )
+
+[node name="bush15" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -1693.24 )
+
+[node name="bush46" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -928 )
+
+[node name="bush54" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -288.081 )
+
+[node name="bush16" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -1693.24 )
+
+[node name="bush44" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -928 )
+
+[node name="bush52" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -288.081 )
+
+[node name="bush17" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -1759 )
+
+[node name="bush19" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -1821.24 )
+
+[node name="bush21" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -1887 )
+
+[node name="bush26" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -2013.24 )
+
+[node name="bush27" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -2079 )
+
+[node name="bush29" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -2141.24 )
+
+[node name="bush23" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -1949.24 )
+
+[node name="bush25" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -2013.24 )
+
+[node name="bush28" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -2077.24 )
+
+[node name="bush30" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 99, -2141.24 )
+
+[node name="bush31" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 162, -2141.24 )
+
+[node name="bush32" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 228.5, -2143 )
+
+[node name="bush33" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -2143 )
+
+[node name="bush9" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, 416 )
+
+[node name="bush10" parent="Level/constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, 480 )
+
+[node name="wall-left" type="StaticBody2D" parent="Level/constraints"]
+editor/display_folded = true
+position = Vector2( 32, -800 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-left"]
+position = Vector2( 0, -32 )
+shape = SubResource( 1 )
+
+[node name="wall-right" type="StaticBody2D" parent="Level/constraints"]
+position = Vector2( 416, -800 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/constraints/wall-right"]
+position = Vector2( 0, -32 )
+shape = SubResource( 1 )
+
+[node name="arvore4" parent="Level/constraints" instance=ExtResource( 3 )]
+position = Vector2( 224, -224.081 )
+
+[node name="tronco" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 159, -1887 )
+
+[node name="tronco6" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -1758 )
+
+[node name="tronco5" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 161, -1504 )
+
+[node name="tronco3" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 161, -1247 )
+
+[node name="tronco2" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 291, -1951 )
+scale = Vector2( -1, 1 )
+state = false
+
+[node name="tronco7" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 290, -1822.24 )
+scale = Vector2( -1, 1 )
+state = false
+
+[node name="tronco4" parent="Level/constraints" instance=ExtResource( 4 )]
+position = Vector2( 289.968, -1376 )
+scale = Vector2( -1, 1 )
+state = false
+
+[node name="arbusto" parent="Level/constraints" instance=ExtResource( 5 )]
+position = Vector2( 224, -864 )
+
+[node name="victory" type="Area2D" parent="Level"]
+editor/display_folded = true
+position = Vector2( 219.968, -2079 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/victory"]
+shape = SubResource( 2 )
+
+[node name="Player" type="KinematicBody2D" parent="." groups=[
+"player",
+]]
+pause_mode = 1
+editor/display_folded = true
+position = Vector2( 224, 416 )
+collision/safe_margin = 1.0
+script = ExtResource( 7 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -2, -8 )
+scale = Vector2( 0.0368, 0.0368 )
+frames = SubResource( 3 )
+animation = "up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 4 )
+
+[node name="SanityRecharge" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 12 )
+volume_db = -32.0
+
+[node name="Camera" type="Camera2D" parent="."]
+pause_mode = 1
+position = Vector2( 224, 480 )
+current = true
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 13 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="SanityBar" type="TextureProgress" parent="GUI"]
+pause_mode = 1
+margin_left = 11.0
+margin_top = 21.0
+margin_right = 53.0
+margin_bottom = 131.0
+value = 100.0
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+fill_mode = 3
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1, 0.9 )
+
+[node name="walls" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -2, 0 )
+z_index = 1
+
+[node name="WallsSprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -1859.58 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -1859.58 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -1072.58 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -1072.58 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -280.586 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -280.586 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, 499.997 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, 499.997 )
+texture = ExtResource( 17 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+__meta__ = {
+"_edit_lock_": true
+}
+
