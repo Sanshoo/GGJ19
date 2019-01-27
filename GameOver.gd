@@ -1,16 +1,22 @@
-extends Sprite
+extends Node2D
 
 var title
+export (String) var c_mortis
 
 func _ready():
 	title = preload("res://MainMenu.tscn")
-	$GameOver.modulate.a = 0
-	$Flavor.modulate.a = 0
+	$gameover.modulate.a = 0
+	$wolf.modulate.a = 0
+	$sanity.modulate.a = 0
 	$insert.modulate.a = 0
 	yield(get_tree().create_timer(0.3), "timeout")
-	$GameOver.modulate.a = 1
+	$gameover.modulate.a = 1
 	yield(get_tree().create_timer(0.5), "timeout")
-	$Flavor.modulate.a = 1
+	match c_mortis:
+		"sanity":
+			$sanity.modulate.a = 1
+		"wolf":
+			$wolf.modulate.a = 1
 	yield(get_tree().create_timer(0.7), "timeout")
 	$insert.modulate.a = 1
 

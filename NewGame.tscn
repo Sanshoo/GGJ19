@@ -70,6 +70,7 @@ position = Vector2( 160, 608 )
 position = Vector2( 224, -672 )
 
 [node name="constraints" type="YSort" parent="Level"]
+editor/display_folded = true
 
 [node name="bush" parent="Level/constraints" instance=ExtResource( 2 )]
 position = Vector2( 96, 544 )

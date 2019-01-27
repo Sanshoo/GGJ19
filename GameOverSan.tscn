@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://GameOver.gd" type="Script" id=1]
+[ext_resource path="res://assets/title/bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/offgame/gameover.png" type="Texture" id=3]
+[ext_resource path="res://assets/offgame/legacy/FX LOST.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/offgame/gameover-wolf.png" type="Texture" id=5]
+[ext_resource path="res://assets/offgame/gameover-flavor.png" type="Texture" id=6]
+[ext_resource path="res://assets/offgame/insertcoin.png" type="Texture" id=7]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource( 1 )
+c_mortis = "sanity"
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 295, 300 )
+texture = ExtResource( 2 )
+
+[node name="gameover" type="Sprite" parent="."]
+position = Vector2( 302.92, 164.169 )
+texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -26.0
+autoplay = true
+
+[node name="wolf" type="Sprite" parent="."]
+position = Vector2( 295.044, 252.559 )
+texture = ExtResource( 5 )
+
+[node name="sanity" type="Sprite" parent="."]
+position = Vector2( 300.815, 244.169 )
+texture = ExtResource( 6 )
+
+[node name="insert" type="Sprite" parent="."]
+position = Vector2( 304.408, 427.004 )
+texture = ExtResource( 7 )
+
