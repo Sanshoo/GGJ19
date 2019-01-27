@@ -43,17 +43,18 @@ extents = Vector2( 32, 32 )
 extents = Vector2( 64, 32 )
 
 [node name="tronco" type="StaticBody2D"]
-position = Vector2( 159, 97 )
+position = Vector2( 192, 97 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -31, 1 )
+position = Vector2( 17, 1 )
 scale = Vector2( 0.660156, 0.609375 )
 frames = SubResource( 1 )
 animation = "attack"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

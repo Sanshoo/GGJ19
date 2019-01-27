@@ -32,7 +32,6 @@ position = Vector2( 224, 768 )
 position = Vector2( 224, -5462 )
 
 [node name="constraints" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="bush" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, 544 )
@@ -273,10 +272,10 @@ state = false
 position = Vector2( 159, -3678.5 )
 
 [node name="tronco" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 159, -1887 )
+position = Vector2( 159, -1888 )
 
 [node name="tronco6" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 160, -1758 )
+position = Vector2( 160, -1759 )
 
 [node name="tronco18" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 99, -5088 )
@@ -296,18 +295,18 @@ position = Vector2( 96, -2589 )
 state = false
 
 [node name="tronco5" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 161, -1504 )
+position = Vector2( 160, -1504 )
 
 [node name="tronco3" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 161, -1247 )
+position = Vector2( 160, -1247 )
 
 [node name="tronco2" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 291, -1951 )
+position = Vector2( 290, -1952 )
 scale = Vector2( -1, 1 )
 state = false
 
 [node name="tronco7" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 290, -1822.24 )
+position = Vector2( 290, -1823.24 )
 scale = Vector2( -1, 1 )
 state = false
 
@@ -335,7 +334,7 @@ scale = Vector2( -1, 1 )
 state = false
 
 [node name="tronco4" parent="constraints" instance=ExtResource( 3 )]
-position = Vector2( 289.968, -1376 )
+position = Vector2( 288.968, -1376 )
 scale = Vector2( -1, 1 )
 state = false
 
