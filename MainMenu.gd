@@ -1,8 +1,10 @@
-extends Control
+extends Node2D
 
-onready var title = $MarginContainer/CenterContainer/HBoxContainer/CenterContainer/TextureRect
-onready var coin = $MarginContainer/CenterContainer/HBoxContainer/CenterContainer2/TextureRect2
-onready var creditz = $MarginContainer/CenterContainer/HBoxContainer/CenterContainer3/TextureRect
+onready var title = $name
+onready var coin = $insertcoin
+onready var creditz = $creditz
+onready var controls1 = $controls1
+onready var controls2 = $controls2
 
 var game
 var intro = true
@@ -12,6 +14,8 @@ func _ready():
 	title.modulate.a = 0
 	coin.modulate.a = 0
 	creditz.modulate.a = 0
+	controls1.modulate.a = 0
+	controls2.modulate.a = 0
 	yield(get_tree().create_timer(0.3), "timeout")
 	title.modulate.a = 1
 	yield(get_tree().create_timer(0.5), "timeout")
@@ -21,9 +25,13 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_focus") and intro:
-		title.modulate.a = 0
 		coin.modulate.a = 0
-		$MarginContainer2.visible = true
+		yield(get_tree().create_timer(0.3), "timeout")
+		title.modulate.a = 0
+		yield(get_tree().create_timer(0.3), "timeout")
+		controls1.modulate.a = 1
+		yield(get_tree().create_timer(0.5), "timeout")
+		controls2.modulate.a = 1
 		intro = false
 	elif Input.is_action_just_pressed("ui_focus"):
 		get_tree().change_scene_to(game)
