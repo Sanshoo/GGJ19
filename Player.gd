@@ -10,6 +10,7 @@ var sanity_thereshold = 33
 var max_sanity = 100
 var sanity_step = 3
 var sanity_hit = 20
+var current_step = 0
 var n_pos
 var m_pos
 
@@ -37,6 +38,7 @@ func _physics_process(delta):
 	
 	# sanity
 	if position != n_pos:
+		play_footstep()
 		sanity -= sanity_step
 		n_pos = position
 	if Input.is_action_just_pressed("ui_focus") and sanity < sanity_thereshold:
@@ -78,4 +80,23 @@ func hit():
 	stunned = false
 	$Sprite.modulate = Color(1, 1, 1)
 
-
+func play_footstep():
+	match current_step:
+		0:
+			$Footsteps.play(0.0)
+			yield(get_tree().create_timer(0.5), "timeout")
+			$Footsteps.stop()
+		1:
+			$Footsteps.play(0.5)
+			yield(get_tree().create_timer(0.5), "timeout")
+			$Footsteps.stop()
+		2:
+			$Footsteps.play(1.0)
+			yield(get_tree().create_timer(0.5), "timeout")
+			$Footsteps.stop()
+		3:
+			$Footsteps.play(1.5)
+			yield(get_tree().create_timer(0.5), "timeout")
+			$Footsteps.stop()
+	current_step += 1
+	if current_step > 3: current_step = 0
