@@ -29,6 +29,6 @@ func _process(delta):
 			nearby = true
 			yield(get_tree().create_timer(1.0),"timeout")
 			if distance_dif <= 0:
-				game.game_over()
+				game.game_over("wolf")
 			else:
 				nearby = false
