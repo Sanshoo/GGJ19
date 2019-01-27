@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Level.tscn" type="PackedScene" id=2]
@@ -10,6 +10,65 @@
 [ext_resource path="res://assets/greenwall3.png" type="Texture" id=8]
 [ext_resource path="res://Wolf.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/ost/Intro Tema Não loope.wav" type="AudioStream" id=10]
+[ext_resource path="res://Hand.gd" type="Script" id=11]
+[ext_resource path="res://assets/title/bg.png" type="Texture" id=12]
+[ext_resource path="res://assets/polaroid.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "hand-down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 250, 300 ), Vector2( 250, 876 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.784314 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "hand-up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 250, 876 ), Vector2( 250, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.784314 ) ]
+}
 
 [node name="Game" type="Node" groups=[
 "master",
@@ -185,4 +244,26 @@ region_rect = Rect2( 219, 0, 181, 800 )
 [node name="OST" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Hand" type="CanvasLayer" parent="." groups=[
+"hand",
+]]
+layer = 2
+script = ExtResource( 11 )
+
+[node name="Node2D" type="Node2D" parent="Hand"]
+visible = false
+
+[node name="fade" type="Sprite" parent="Hand/Node2D"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 295, 300 )
+texture = ExtResource( 12 )
+
+[node name="hand" type="Sprite" parent="Hand/Node2D"]
+position = Vector2( 250, 876 )
+texture = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hand/Node2D"]
+anims/hand-down = SubResource( 2 )
+anims/hand-up = SubResource( 1 )
 

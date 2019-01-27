@@ -5,7 +5,7 @@ var stunned = false
 
 var sanity = 100 # (current sanity)
 var recharging = false
-var sanity_recharge = 30
+var sanity_recharge = 43
 var sanity_thereshold = 33
 var max_sanity = 100
 var sanity_step = 3
@@ -42,6 +42,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_focus") and sanity < sanity_thereshold:
 		m_pos = position
 		recharging = true
+		get_tree().call_group("hand", "up")
 	elif Input.is_action_pressed("ui_focus") and m_pos == position and recharging:
 		self.modulate = Color(0.7, 6, 6)
 		if sanity < max_sanity:
@@ -49,6 +50,9 @@ func _physics_process(delta):
 	else:
 		self.modulate = Color(1, 1, 1)
 		recharging = false
+	if Input.is_action_just_released("ui_focus"):
+		get_tree().call_group("hand", "down")
+		
 
 	# sfx
 	if Input.is_action_just_pressed("ui_focus"):
