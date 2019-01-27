@@ -22,6 +22,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		attacking = true
 		$Sprite.animation = "attack"
+		$AudioStreamPlayer.play()
 		body.hit()
 		yield(get_tree().create_timer(0.7), "timeout")
 		$Sprite.animation = "active"
