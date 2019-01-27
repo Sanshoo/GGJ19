@@ -3,7 +3,7 @@ extends Node2D
 var game
 var player
 var camera
-var active = true
+var active = false
 var nearby = false
 var distance_dif
 var wolf_speed = 68

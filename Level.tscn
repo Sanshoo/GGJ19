@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=2]
-[ext_resource path="res://arvore.gd" type="Script" id=3]
-[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://victory.gd" type="Script" id=6]
+[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=4]
+[ext_resource path="res://victory.gd" type="Script" id=5]
+[ext_resource path="res://SummonWolf.gd" type="Script" id=6]
+[ext_resource path="res://assets/fx/Uivo!.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,6 +15,10 @@ extents = Vector2( 32, 1408 )
 [sub_resource type="RectangleShape2D" id=2]
 
 extents = Vector2( 95, 30 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+extents = Vector2( 160, 32 )
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -29,272 +34,205 @@ position = Vector2( 224, -5462 )
 [node name="constraints" type="YSort" parent="."]
 editor/display_folded = true
 
-[node name="bush" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, 544 )
 
-[node name="bush2" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush2" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 160, 544 )
 
-[node name="bush3" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush3" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 224, 544 )
 
-[node name="bush4" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush4" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, 544 )
 
-[node name="bush5" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush5" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, 544 )
 
-[node name="bush6" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush6" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, 480 )
 
-[node name="bush7" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush7" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, 480 )
 
-[node name="bush8" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush8" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, 416 )
 
-[node name="bush48" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush48" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -800 )
 
-[node name="bush55" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush55" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -160.081 )
 
-[node name="bush49" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush49" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -800 )
 
-[node name="bush56" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush56" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -160.081 )
 
-[node name="bush45" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush45" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -864 )
 
-[node name="bush53" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush53" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -224.081 )
 
-[node name="bush47" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush47" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -864 )
 
-[node name="bush57" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush57" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -224.081 )
 
-[node name="bush46" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush46" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -928 )
 
-[node name="bush54" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush54" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 96, -288.081 )
 
-[node name="bush44" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush44" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -928 )
 
-[node name="bush52" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush52" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -288.081 )
 
-[node name="bush34" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush34" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3040 )
 
-[node name="bush36" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush36" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -3040 )
 
-[node name="bush69" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush69" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 162, -3168 )
 
-[node name="bush71" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush71" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -3168 )
 
-[node name="bush72" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush72" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, -3168 )
 
-[node name="bush74" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush74" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3232 )
 
-[node name="bush75" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush75" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -3232 )
 
-[node name="bush76" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush76" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -3296 )
 
-[node name="bush77" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush77" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3296 )
 
-[node name="bush78" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush78" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3296 )
 
-[node name="bush79" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush79" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 289, -3840 )
 
-[node name="bush80" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush80" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4960 )
 
-[node name="bush87" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush87" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 162, -4960 )
 
-[node name="bush100" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush100" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 161, -5152 )
 
-[node name="bush92" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush92" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 226, -4960 )
 
-[node name="bush103" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush103" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 226, -5152 )
 
-[node name="bush105" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush105" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 289, -5152 )
 
-[node name="bush108" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush108" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -5216 )
 
-[node name="bush109" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush109" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 353, -5280 )
 
-[node name="bush112" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush112" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -4768 )
 
-[node name="bush82" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush82" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4832 )
 
-[node name="bush88" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush88" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4896 )
 
-[node name="bush111" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush111" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4768 )
 
-[node name="bush83" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush83" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4832 )
 
-[node name="bush89" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush89" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4896 )
 
-[node name="bush114" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush114" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -4768 )
 
-[node name="bush73" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush73" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3168 )
 
-[node name="bush63" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush63" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -3104 )
 
-[node name="bush37" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush37" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -3104 )
 
-[node name="bush61" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush61" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 162, -2652 )
 
-[node name="bush66" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush66" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 162, -2715.5 )
 
-[node name="bush35" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush35" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 225, -2589 )
 
-[node name="bush60" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush60" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 225, -2652 )
 
-[node name="bush64" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush64" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 224, -2715.5 )
 
-[node name="bush70" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush70" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 224, -2779 )
 
-[node name="bush38" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush38" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, -2652 )
 
-[node name="bush65" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush65" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, -2715.5 )
 
-[node name="bush26" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush26" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 353, -5152 )
 
-[node name="bush27" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush27" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -5349 )
 
-[node name="bush29" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush29" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, -5411.24 )
 
-[node name="bush28" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush28" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -5347.24 )
 
-[node name="bush30" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush30" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 99, -5411.24 )
 
-[node name="bush31" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush31" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 162, -5411.24 )
 
-[node name="bush32" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush32" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 224, -5411.24 )
 
-[node name="bush33" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush33" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, -5413 )
 
-[node name="bush9" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush9" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 352, 416 )
 
-[node name="bush10" type="StaticBody2D" parent="constraints" instance=ExtResource( 1 )]
-editor/display_folded = true
+[node name="bush10" parent="constraints" instance=ExtResource( 1 )]
 position = Vector2( 288, 480 )
 
 [node name="wall-left" type="StaticBody2D" parent="constraints"]
@@ -321,237 +259,131 @@ shape = SubResource( 1 )
 position = Vector2( 0, -2848 )
 shape = SubResource( 1 )
 
-[node name="arvore4" type="StaticBody2D" parent="constraints" instance=ExtResource( 2 )]
+[node name="arvore4" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 224, -224.081 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arvore8" type="StaticBody2D" parent="constraints" instance=ExtResource( 2 )]
+[node name="arvore8" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 226, -4768 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arvore7" type="StaticBody2D" parent="constraints" instance=ExtResource( 2 )]
+[node name="arvore7" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 289, -3968 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="arvore6" type="StaticBody2D" parent="constraints" instance=ExtResource( 2 )]
+[node name="arvore6" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 159, -3678.5 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 159, -1887 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco6" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco6" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 160, -1758 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco18" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco18" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 99, -5088 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco19" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco19" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 99, -5216 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco15" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco15" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 161, -4032 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco12" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco12" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 94, -2779 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco11" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco11" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 96, -2589 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco5" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco5" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 161, -1504 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco3" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco3" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 161, -1247 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco2" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco2" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 291, -1951 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco7" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco7" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 290, -1822.24 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco16" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco16" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 352, -4896 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco17" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco17" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 352, -5024 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco14" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco14" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 288, -3744 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco13" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco13" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 353, -2779 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="tronco10" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco10" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 353, -2589 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="tronco4" type="StaticBody2D" parent="constraints" instance=ExtResource( 4 )]
+[node name="tronco4" parent="constraints" instance=ExtResource( 3 )]
 position = Vector2( 289.968, -1376 )
 scale = Vector2( -1, 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="arbusto" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 224, -864 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arbusto2" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto2" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 161, -3904 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arbusto5" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto5" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 162, -4384 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arbusto6" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto6" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 288, -4384 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="arbusto7" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto7" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 162, -4576 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="arbusto8" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto8" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 289, -4576 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="arbusto3" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto3" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 225, -3040 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 state = false
 
-[node name="arbusto4" type="StaticBody2D" parent="constraints" instance=ExtResource( 5 )]
+[node name="arbusto4" parent="constraints" instance=ExtResource( 4 )]
 position = Vector2( 225, -3296 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="victory" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 225, -5349 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="victory"]
 shape = SubResource( 2 )
+
+[node name="SummonWolf" type="Area2D" parent="."]
+position = Vector2( 224, -2304 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SummonWolf"]
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SummonWolf"]
+stream = ExtResource( 7 )
 
