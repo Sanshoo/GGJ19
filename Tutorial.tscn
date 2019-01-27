@@ -17,6 +17,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "hand-down"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("hand:position")
 tracks/0/interp = 1
@@ -41,13 +42,26 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.784314 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../OST:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -23.0, 0.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 
 resource_name = "hand-up"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("hand:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,6 +82,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.784314 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../OST:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -23.0 ]
 }
 
 [node name="Game" type="Node" groups=[
@@ -245,7 +271,9 @@ region_rect = Rect2( 219, 0, 181, 800 )
 visible = false
 position = Vector2( 224, -2080 )
 
-[node name="OST" type="AudioStreamPlayer" parent="."]
+[node name="OST" type="AudioStreamPlayer" parent="." groups=[
+"ost",
+]]
 stream = ExtResource( 10 )
 autoplay = true
 
