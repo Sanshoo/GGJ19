@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tema Loop.wav-037c50c65d64fe21d1b180a3771d79a8.sample"
+
+[deps]
+
+source_file="res://assets/ost/Tema Loop.wav"
+dest_files=[ "res://.import/Tema Loop.wav-037c50c65d64fe21d1b180a3771d79a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

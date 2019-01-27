@@ -7,9 +7,11 @@ var over_scene
 var win_scene
 var alt_tex
 var def_tex
+var out_of_loop = true
 var win
 
 func _ready():
+	$OST.connect("finished", self, "ost_mng")
 	win_scene = preload("res://GameWon.tscn")
 	def_tex = load("res://assets/sanity-bar/danger.png")
 	alt_tex = load("res://assets/sanity-bar/progress.png")
@@ -23,6 +25,13 @@ func _process(delta):
 	
 	if player.sanity <= 0 and game_state == "ingame":
 		game_over("sanity")
+
+func ost_mng():
+	if out_of_loop:
+		$OST.stream = load("res://assets/ost/Tema Loop.wav")
+		$OST.play()
+	else:
+		$OST.play()
 
 func game_over(causa):
 	match causa:
