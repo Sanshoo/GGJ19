@@ -252,6 +252,7 @@ layer = 2
 script = ExtResource( 11 )
 
 [node name="Node2D" type="Node2D" parent="Hand"]
+visible = false
 
 [node name="fade" type="Sprite" parent="Hand/Node2D"]
 modulate = Color( 1, 1, 1, 0 )

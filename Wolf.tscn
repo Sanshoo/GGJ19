@@ -3,9 +3,7 @@
 [ext_resource path="res://Wolf.gd" type="Script" id=1]
 [ext_resource path="res://assets/wOLF2.png" type="Texture" id=2]
 
-[node name="Wolf" type="Node2D" groups=[
-"wolf",
-]]
+[node name="Wolf" type="Node2D"]
 position = Vector2( 224, 672 )
 script = ExtResource( 1 )
 __meta__ = {
