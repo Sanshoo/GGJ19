@@ -19,7 +19,7 @@ func _process(delta):
 	distance_dif = self.global_position.y - player.global_position.y
 	if active:
 		if distance_dif > 350:
-			self.position.y -= delta * wolf_speed * 3
+			self.position.y -= delta * wolf_speed * 4.3
 		elif nearby:
 			self.position.y -= delta * wolf_speed * 0.6
 		else:

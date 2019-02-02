@@ -55,7 +55,7 @@ shape = SubResource( 2 )
 
 [node name="SanityRecharge" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -32.0
+volume_db = -8.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

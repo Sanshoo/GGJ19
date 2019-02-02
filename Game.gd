@@ -41,8 +41,4 @@ func game_over(causa):
 			get_tree().change_scene_to(load("res://GameOverSan.tscn"))
 
 func victory():
-	win = win_scene.instance()
-	get_tree().change_scene_to(win)
-	win.z_index = 5
-	remove_child($GUI)
-	game_state = "over"
+	get_tree().change_scene_to(win_scene)

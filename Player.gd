@@ -5,7 +5,7 @@ var stunned = false
 
 var sanity = 100 # (current sanity)
 var recharging = false
-var sanity_recharge = 43
+var sanity_recharge = 37
 var sanity_thereshold = 33
 var max_sanity = 100
 var sanity_step = 3

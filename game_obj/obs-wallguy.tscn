@@ -38,7 +38,7 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-extents = Vector2( 32, 32 )
+extents = Vector2( 29.6268, 31.1785 )
 
 [node name="wallguy" type="StaticBody2D"]
 position = Vector2( 224, 96 )
