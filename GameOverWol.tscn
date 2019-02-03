@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/offgame/gameover.png" type="Texture" id=3]
 [ext_resource path="res://assets/ost/Derrota.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/offgame/gameover-wolf.png" type="Texture" id=5]
-[ext_resource path="res://assets/offgame/gameover-flavor.png" type="Texture" id=6]
+[ext_resource path="res://assets/offgame/gameover-sanity.png" type="Texture" id=6]
 [ext_resource path="res://assets/offgame/insertcoin.png" type="Texture" id=7]
 
 [node name="GameOver" type="Node2D"]
