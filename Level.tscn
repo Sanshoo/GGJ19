@@ -300,10 +300,10 @@ state = false
 position = Vector2( 288, -3232 )
 
 [node name="wallguy" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 416, -2592 )
+position = Vector2( 352, -2592 )
 
 [node name="wallguy5" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 416, -5024 )
+position = Vector2( 352, -5024 )
 
 [node name="wallguy3" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 352, -2784 )

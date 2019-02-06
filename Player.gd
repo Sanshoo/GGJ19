@@ -32,8 +32,7 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("ui_down"):
 		$Sprite.animation = "down"
 		move_vec.y += tile_size
-	if !stunned and (!move_and_collide(move_vec, true, true, true) or 
-			move_and_collide(move_vec, true, true, true).collider.name != "Walls"):
+	if !stunned and !move_and_collide(move_vec, true, true, true):
 		move_and_collide(move_vec)
 	
 	# sanity

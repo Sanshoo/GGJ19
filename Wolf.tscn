@@ -6,11 +6,9 @@
 [node name="Wolf" type="Node2D"]
 position = Vector2( 224, 672 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 68 )
 scale = Vector2( 0.567303, 0.63 )
 texture = ExtResource( 2 )
 

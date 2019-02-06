@@ -5,9 +5,9 @@
 [ext_resource path="res://assets/obstacles/toco-1.png" type="Texture" id=3]
 [ext_resource path="res://assets/obstacles/toco-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/obstacle1frame1.png" type="Texture" id=5]
-[ext_resource path="res://assets/obstacle1frame0.png" type="Texture" id=6]
-[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=7]
-[ext_resource path="res://assets/obstacle1frame5.png" type="Texture" id=8]
+[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=6]
+[ext_resource path="res://assets/obstacle1frame5.png" type="Texture" id=7]
+[ext_resource path="res://assets/obstacle1frame0.png" type="Texture" id=8]
 [ext_resource path="res://assets/fx/Saindo do arbusto.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -23,20 +23,20 @@ animations = [ {
 "name": "active",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "inactive",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "attack",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "inactive",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
-extents = Vector2( 32, 24 )
+extents = Vector2( 30, 24 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
