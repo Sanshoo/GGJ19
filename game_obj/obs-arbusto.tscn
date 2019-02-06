@@ -6,10 +6,10 @@
 [ext_resource path="res://assets/obstacles/arbusto-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/obstacle3frame1.png" type="Texture" id=5]
 [ext_resource path="res://assets/obstacle3frame2.png" type="Texture" id=6]
-[ext_resource path="res://assets/obstacle3frame0.png" type="Texture" id=7]
-[ext_resource path="res://assets/obstacle3frame3.png" type="Texture" id=8]
-[ext_resource path="res://assets/obstacle3frame4.png" type="Texture" id=9]
-[ext_resource path="res://assets/obstacle3frame5.png" type="Texture" id=10]
+[ext_resource path="res://assets/obstacle3frame3.png" type="Texture" id=7]
+[ext_resource path="res://assets/obstacle3frame4.png" type="Texture" id=8]
+[ext_resource path="res://assets/obstacle3frame5.png" type="Texture" id=9]
+[ext_resource path="res://assets/obstacle3frame0.png" type="Texture" id=10]
 [ext_resource path="res://assets/fx/Saindo do arbusto.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -25,15 +25,15 @@ animations = [ {
 "name": "active",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "inactive",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "inactive",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -56,6 +56,7 @@ position = Vector2( -5, -18 )
 scale = Vector2( 0.777344, 0.777344 )
 frames = SubResource( 1 )
 animation = "attack"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
