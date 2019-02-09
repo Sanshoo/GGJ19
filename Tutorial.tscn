@@ -299,6 +299,7 @@ position = Vector2( 224, -2080 )
 "ost",
 ]]
 stream = ExtResource( 12 )
+autoplay = true
 
 [node name="Hand" type="CanvasLayer" parent="." groups=[
 "hand",
