@@ -1,11 +1,13 @@
 extends StaticBody2D
 
 export (bool) var state = true
+export (bool) var perma = false
 var attacking = false
 
 func _ready():
 	$Hitbox.connect("body_entered", self, "_on_body_entered")
-	$Timer.connect("timeout", self, "_on_timeout")
+	if !perma:
+		$Timer.connect("timeout", self, "_on_timeout")
 
 func _process(delta):
 	if state and !attacking:
