@@ -164,13 +164,13 @@ texture_progress = ExtResource( 9 )
 fill_mode = 3
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1, 0.9 )
 
 [node name="walls" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+editor/display_folded = true
 position = Vector2( -2, 0 )
 z_index = 1
 
@@ -289,11 +289,98 @@ offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
+[node name="WallsSprite17" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -8217 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+
+[node name="WallsSprite18" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 39, -9013.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+
+[node name="WallsSprite19" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 50, -9813.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+
+[node name="WallsSprite20" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -8217 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
+[node name="WallsSprite21" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 459, -9013.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
+[node name="WallsSprite22" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 450, -9813.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
+[node name="WallsSprite23" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -7430 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+
+[node name="WallsSprite24" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -7430 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
+[node name="WallsSprite25" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 50, -6645.5 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallsSprite26" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -6638.01 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
+[node name="WallsSprite27" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 51, -5857.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( -20, 4, 228, 802 )
+
+[node name="WallsSprite28" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
+position = Vector2( 452, -5857.42 )
+texture = ExtResource( 10 )
+offset = Vector2( -24, 42.5833 )
+region_enabled = true
+region_rect = Rect2( 219, 0, 181, 800 )
+
 [node name="Wolf" parent="." groups=[
 "wolf",
 ] instance=ExtResource( 11 )]
 visible = false
-position = Vector2( 224, -2080 )
+position = Vector2( 224, -4473 )
 
 [node name="OST" type="AudioStreamPlayer" parent="." groups=[
 "ost",
