@@ -2,6 +2,7 @@ extends Node
 
 onready var player = $Player
 onready var sanitybar = $"GUI/SanityBar"
+onready var sanityvig = $"GUI/SanityVignette"
 var game_state = "ingame"
 var over_scene
 var win_scene
@@ -17,12 +18,21 @@ func _ready():
 	alt_tex = load("res://assets/sanity-bar/progress.png")
 
 func _process(delta):
+	# sanitybar
 	sanitybar.value = player.sanity
 	if sanitybar.value > player.sanity_thereshold:
 		sanitybar.texture_progress = alt_tex
 	else:
 		sanitybar.texture_progress = def_tex
 	
+	# sanityvignette
+	var vignette_intensity = pow(3.0, (100 - player.sanity) / 100.0) - 1.0
+	sanityvig.material.set_shader_param("vignette_intensity", vignette_intensity)
+#	if player.sanity <= player.sanity_thereshold:
+#		sanityvig.material.set_shader_param("vignette_intensity", 0.04*(100-player.sanity))
+#	elif player.sanity <= (player.max_sanity * 2) / 3:
+#		sanityvig.material.set_shader_param("vignette_intensity", 0.008	*(100-player.sanity))
+
 	if player.sanity <= 0 and game_state == "ingame":
 		game_over("sanity")
 

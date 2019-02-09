@@ -1,22 +1,28 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera2D.gd" type="Script" id=4]
-[ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=5]
-[ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=6]
-[ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=7]
-[ext_resource path="res://assets/greenwall3.png" type="Texture" id=8]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/ost/Intro Tema Não loope.wav" type="AudioStream" id=10]
-[ext_resource path="res://Hand.gd" type="Script" id=11]
-[ext_resource path="res://assets/title/bg.png" type="Texture" id=12]
-[ext_resource path="res://assets/polaroid.png" type="Texture" id=13]
+[ext_resource path="res://assets/offgame/vignette.shader" type="Shader" id=5]
+[ext_resource path="res://assets/offgame/vignette.png" type="Texture" id=6]
+[ext_resource path="res://assets/sanity-bar/under.png" type="Texture" id=7]
+[ext_resource path="res://assets/sanity-bar/over.png" type="Texture" id=8]
+[ext_resource path="res://assets/sanity-bar/progress.png" type="Texture" id=9]
+[ext_resource path="res://assets/greenwall3.png" type="Texture" id=10]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ost/Intro Tema Não loope.wav" type="AudioStream" id=12]
+[ext_resource path="res://Hand.gd" type="Script" id=13]
+[ext_resource path="res://assets/title/bg.png" type="Texture" id=14]
+[ext_resource path="res://assets/polaroid.png" type="Texture" id=15]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="ShaderMaterial" id=1]
 
-resource_name = "hand-down"
+shader = ExtResource( 5 )
+shader_param/vignette_intensity = 0.0
+
+[sub_resource type="Animation" id=2]
+
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("hand:position")
@@ -55,9 +61,8 @@ tracks/2/keys = {
 "values": [ -23.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "hand-up"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("hand:position")
@@ -96,6 +101,18 @@ tracks/2/keys = {
 "values": [ 0.0, -23.0 ]
 }
 
+[sub_resource type="Shader" id=4]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+	COLOR = texture(TEXTURE, UV);
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+
+shader = SubResource( 4 )
+
 [node name="Game" type="Node" groups=[
 "master",
 ]]
@@ -121,8 +138,18 @@ script = ExtResource( 4 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 1
-editor/display_folded = true
 layer = 2
+
+[node name="SanityVignette" type="TextureRect" parent="GUI"]
+material = SubResource( 1 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -590.0
+margin_top = -600.0
+texture = ExtResource( 6 )
+expand = true
 
 [node name="SanityBar" type="TextureProgress" parent="GUI"]
 pause_mode = 1
@@ -131,12 +158,13 @@ margin_top = 21.0
 margin_right = 53.0
 margin_bottom = 131.0
 value = 100.0
-texture_under = ExtResource( 5 )
-texture_over = ExtResource( 6 )
-texture_progress = ExtResource( 7 )
+texture_under = ExtResource( 7 )
+texture_over = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
 fill_mode = 3
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -148,70 +176,70 @@ z_index = 1
 
 [node name="WallsSprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, -1859.58 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite13" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 39, -2656 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite14" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 50, -3456 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite15" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 47.5, -4256 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite16" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 47.5, -5056 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -1859.58 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 459, -2656 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -3456 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -4256 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite12" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 450, -5056 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
@@ -221,63 +249,62 @@ __meta__ = {
 
 [node name="WallsSprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, -1072.58 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -1072.58 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 50, -288.081 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, -280.586 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="WallsSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 51, 499.997 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( -20, 4, 228, 802 )
 
 [node name="WallsSprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/walls"]
 position = Vector2( 452, 499.997 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( -24, 42.5833 )
 region_enabled = true
 region_rect = Rect2( 219, 0, 181, 800 )
 
 [node name="Wolf" parent="." groups=[
 "wolf",
-] instance=ExtResource( 9 )]
+] instance=ExtResource( 11 )]
 visible = false
 position = Vector2( 224, -2080 )
 
 [node name="OST" type="AudioStreamPlayer" parent="." groups=[
 "ost",
 ]]
-stream = ExtResource( 10 )
-autoplay = true
+stream = ExtResource( 12 )
 
 [node name="Hand" type="CanvasLayer" parent="." groups=[
 "hand",
 ]]
 layer = 2
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="Node2D" type="Node2D" parent="Hand"]
 visible = false
@@ -285,13 +312,16 @@ visible = false
 [node name="fade" type="Sprite" parent="Hand/Node2D"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 295, 300 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="hand" type="Sprite" parent="Hand/Node2D"]
 position = Vector2( 250, 876 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hand/Node2D"]
-anims/hand-down = SubResource( 1 )
-anims/hand-up = SubResource( 2 )
+anims/hand-down = SubResource( 2 )
+anims/hand-up = SubResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+material = SubResource( 5 )
 
