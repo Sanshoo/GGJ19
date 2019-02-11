@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Node
+\"\"\"
+screenshake by kcabra
+add as child of a Camera2D node and call the shake() method
+based on jonny morrill post
+(https://jonny.morrill.me/en/blog/gamedev-how-to-implement-a-camera-shake-effect/)
+\"\"\"
+
+# nodes
+onready var camera = get_node(\"..\")
+onready var tween = Tween.new()
+# params
+export (float, 0, 10) var duration = 0.3 # in secs
+export (int, 0, 256) var magnitude = 10  # in pixels
+export (int, 0, 240) var frequency = 50  # in hertz
+# samples array
+var samples
+
+func _ready():
+	add_child(tween)
+
+func generate_samples():
+	samples = []
+	randomize()
+	
+	var sample_count = duration * frequency
+	for i in range(sample_count):
+		var decay_factor = range_lerp(i, 0, sample_count-1, 1.0, 0.0)
+		samples.append( Vector2(rand_range(-1, 1), rand_range(-1, 1)) * magnitude * decay_factor)
+
+func shake():
+	generate_samples()
+	var period = 1.0 / frequency
+	for shake in samples:
+		tween.interpolate_property(camera, \"offset\", camera.offset, shake, period, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+		yield(tween, \"tween_completed\")
+	
+	pass
+"
+
+[node name="screenshake" type="Node"]
+script = SubResource( 6 )
+

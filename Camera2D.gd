@@ -18,3 +18,6 @@ func _process(delta):
 	screen_bot = next_pos + 300
 	if screen_top > max_y and screen_bot < min_y:
 		position.y = next_pos
+
+func shake():
+	$screenshake.shake()

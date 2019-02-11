@@ -14,7 +14,10 @@ var current_step = 0
 var n_pos
 var m_pos
 
+signal hit
+
 func _ready():
+	connect("hit", get_tree().get_nodes_in_group("camera")[0], "shake")
 	n_pos = position
 
 func _physics_process(delta):
@@ -62,6 +65,7 @@ func _physics_process(delta):
 		$SanityRecharge.stop()
 
 func hit():
+	emit_signal("hit")
 	stunned = true
 	$Sprite.modulate = Color(100, 100, 100)
 	sanity -= sanity_hit
