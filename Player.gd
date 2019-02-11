@@ -3,7 +3,7 @@ extends KinematicBody2D
 var tile_size = 64
 var stunned = false
 
-var sanity = 100 # (current sanity)
+var sanity = 26 # (current sanity)
 var recharging = false
 var sanity_recharge = 37
 var sanity_thereshold = 33
