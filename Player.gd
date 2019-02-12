@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 var tile_size = 64
 var stunned = false
+var to_be_moved = false
+var movable = true
+export (float, 0.0, 1.0, 0.1) var movespeed = 0.2 # in sec
 
 var sanity = 26 # (current sanity)
 var recharging = false
@@ -23,20 +26,37 @@ func _ready():
 func _physics_process(delta):
 	# movement
 	var move_vec = Vector2(0, 0)
-	if Input.is_action_just_pressed("ui_up"):
-		$Sprite.animation = "up"
-		move_vec.y -= tile_size
-	elif Input.is_action_just_pressed("ui_left"):
-		$Sprite.animation = "left"
-		move_vec.x -= tile_size
-	elif Input.is_action_just_pressed("ui_right"):
-		$Sprite.animation = "right"
-		move_vec.x += tile_size
-	elif Input.is_action_just_pressed("ui_down"):
-		$Sprite.animation = "down"
-		move_vec.y += tile_size
-	if !stunned and !move_and_collide(move_vec, true, true, true):
-		move_and_collide(move_vec)
+	if movable:
+		if Input.is_action_just_pressed("ui_up"):
+			$Sprite.animation = "up"
+			to_be_moved = true
+			move_vec.y -= tile_size
+		elif Input.is_action_just_pressed("ui_left"):
+			$Sprite.animation = "left"
+			to_be_moved = true
+			move_vec.x -= tile_size
+		elif Input.is_action_just_pressed("ui_right"):
+			$Sprite.animation = "right"
+			to_be_moved = true
+			move_vec.x += tile_size
+		elif Input.is_action_just_pressed("ui_down"):
+			$Sprite.animation = "down"
+			to_be_moved = true
+			move_vec.y += tile_size
+		if to_be_moved and !stunned and !move_and_collide(move_vec, true, true, true):
+			to_be_moved = false
+			move_and_collide(move_vec)
+			$Sprite.position -= move_vec
+			movable = false
+			if movespeed != 0:
+				$Tween.interpolate_property($Sprite, "position",
+						$Sprite.position, Vector2(0, 0), movespeed,
+						Tween.TRANS_CUBIC, Tween.EASE_OUT)
+				$Tween.start()
+				yield($Tween, "tween_completed")
+			else:
+				$Sprite.position = Vector2(0, 0)
+			movable = true
 	
 	# sanity
 	if position != n_pos:

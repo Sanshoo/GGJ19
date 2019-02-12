@@ -60,3 +60,5 @@ volume_db = -8.0
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
+[node name="Tween" type="Tween" parent="."]
+
