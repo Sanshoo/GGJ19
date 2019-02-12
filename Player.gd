@@ -5,8 +5,9 @@ var stunned = false
 var to_be_moved = false
 var movable = true
 export (float, 0.0, 1.0, 0.1) var movespeed = 0.2 # in sec
+export (bool) var step_pause = true
 
-var sanity = 26 # (current sanity)
+export (int, 1, 100) var sanity = 26 # (current sanity)
 var recharging = false
 var sanity_recharge = 37
 var sanity_thereshold = 33
@@ -54,6 +55,8 @@ func _physics_process(delta):
 						Tween.TRANS_CUBIC, Tween.EASE_OUT)
 				$Tween.start()
 				yield($Tween, "tween_completed")
+				if step_pause:
+					yield(get_tree().create_timer(movespeed/2), "timeout")
 			else:
 				$Sprite.position = Vector2(0, 0)
 			movable = true
