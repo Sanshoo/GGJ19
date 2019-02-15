@@ -8,7 +8,7 @@ export (float, 0.0, 1.0, 0.1) var movespeed = 0.2 # in sec
 export (bool) var step_pause = true
 
 export (int, 1, 100) var sanity = 26 # (current sanity)
-var recharging = false
+var recharging = false setget recharging_changed
 var sanity_recharge = 37
 var sanity_thereshold = 33
 var max_sanity = 100
@@ -44,12 +44,13 @@ func _physics_process(delta):
 			$Sprite.animation = "down"
 			to_be_moved = true
 			move_vec.y += tile_size
+		
 		if to_be_moved and !stunned and !move_and_collide(move_vec, true, true, true):
 			to_be_moved = false
 			move_and_collide(move_vec)
-			$Sprite.position -= move_vec
 			movable = false
 			if movespeed != 0:
+				$Sprite.position -= move_vec
 				$Tween.interpolate_property($Sprite, "position",
 						$Sprite.position, Vector2(0, 0), movespeed,
 						Tween.TRANS_CUBIC, Tween.EASE_OUT)
@@ -57,35 +58,32 @@ func _physics_process(delta):
 				yield($Tween, "tween_completed")
 				if step_pause:
 					yield(get_tree().create_timer(movespeed/2), "timeout")
-			else:
-				$Sprite.position = Vector2(0, 0)
 			movable = true
 	
-	# sanity
 	if position != n_pos:
 		play_footstep()
 		sanity -= sanity_step
 		n_pos = position
+	
+	# sanity
 	if Input.is_action_just_pressed("ui_focus") and sanity < sanity_thereshold:
 		m_pos = position
-		recharging = true
-		get_tree().call_group("hand", "up")
-	elif Input.is_action_pressed("ui_focus") and m_pos == position and recharging:
-#		self.modulate = Color(0.7, 6, 6)
-		if sanity < max_sanity:
-			sanity += delta*sanity_recharge
-	else:
-#		self.modulate = Color(1, 1, 1)
-		recharging = false
-	if Input.is_action_just_released("ui_focus"):
-		get_tree().call_group("hand", "down")
-		
+		self.recharging = true
+	elif position != m_pos or !Input.is_action_pressed("ui_focus") or sanity >= max_sanity:
+		self.recharging = false
+	
+	if m_pos == position and recharging and sanity < max_sanity:
+		sanity += delta*sanity_recharge
 
-	# sfx
-	if Input.is_action_just_pressed("ui_focus"):
-		$SanityRecharge.play()
-	if Input.is_action_just_released("ui_focus"):
-		$SanityRecharge.stop()
+func recharging_changed(value):
+	recharging = value
+	match value:
+		true:
+			$SanityRecharge.play()
+			get_tree().call_group("hand", "up")
+		false:
+			$SanityRecharge.stop()
+			get_tree().call_group("hand", "down")
 
 func hit():
 	emit_signal("hit")
