@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://arvore.gd" type="Script" id=1]
 [ext_resource path="res://assets/obstacles/toco-0.png" type="Texture" id=2]
 [ext_resource path="res://assets/obstacles/toco-1.png" type="Texture" id=3]
 [ext_resource path="res://assets/obstacles/toco-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/obstacle1frame1.png" type="Texture" id=5]
-[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=6]
-[ext_resource path="res://assets/obstacle1frame5.png" type="Texture" id=7]
-[ext_resource path="res://assets/obstacle1frame0.png" type="Texture" id=8]
-[ext_resource path="res://assets/fx/Saindo do arbusto.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/obstacle1frame5.png" type="Texture" id=6]
+[ext_resource path="res://assets/obstacle1frame4.png" type="Texture" id=7]
+[ext_resource path="res://assets/obstacle1frame3.png" type="Texture" id=8]
+[ext_resource path="res://assets/obstacle1frame2.png" type="Texture" id=9]
+[ext_resource path="res://assets/obstacle1frame0.png" type="Texture" id=10]
+[ext_resource path="res://assets/fx/Saindo do arbusto.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,12 +25,12 @@ animations = [ {
 "name": "active",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "attack",
-"speed": 3.0
+"speed": 6.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "inactive",
 "speed": 5.0
@@ -71,5 +73,5 @@ wait_time = 1.5
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 11 )
 
