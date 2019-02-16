@@ -5,12 +5,15 @@ onready var player = get_tree().get_nodes_in_group("player")[0]
 onready var game = get_tree().get_nodes_in_group("master")[0]
 onready var greenwall = get_tree().get_root().get_node("Game/ParallaxBackground/ParallaxLayer")
 onready var tween = $Tween
+onready var victory = false
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
+	
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		victory = true
 		player.stunned = true
 		var time = 3600 - int($Timer.time_left)
 		camera.active = false
@@ -44,3 +47,7 @@ func _on_body_entered(body):
 		tween.interpolate_property($pressx, "modulate:a", 0, 1,
 				0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT, 2)
 		tween.start()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_focus") and victory == true:
+		get_tree().change_scene_to(load("res://MainMenu.tscn"))
