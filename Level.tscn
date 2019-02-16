@@ -468,6 +468,8 @@ shape = SubResource( 3 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SummonWolf"]
 stream = ExtResource( 10 )
 
+[node name="Tween" type="Tween" parent="SummonWolf"]
+
 
 [editable path="constraints/wallguy7"]
 
