@@ -15,7 +15,7 @@ func _ready():
 func _on_body_entered(player):
 	if triggered == false:
 		if player.is_in_group("player"):
-			camera.state = "cutscene"
+			camera.active = false
 			
 			tween.interpolate_property(camera, "position:y", camera.position.y,
 					camera.position.y + cutscene_setback_amount, cutscene_setback_time,
@@ -41,5 +41,5 @@ func _on_body_entered(player):
 			yield(tween, "tween_completed")
 			wolf.active = true
 			player.movable = true
-			camera.state = "active"
+			camera.active = true
 			triggered = true

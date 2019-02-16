@@ -153,6 +153,7 @@ script = ExtResource( 3 )
 
 [node name="screenshake2" parent="Camera" instance=ExtResource( 4 )]
 duration = 3.0
+magnitude = 8
 
 [node name="Level" type="Node2D" parent="."]
 __meta__ = {
