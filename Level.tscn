@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/hometile.png" type="Texture" id=3]
-[ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game_obj/obs-wallguy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game_obj/obs-arvore.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_obj/obs-tronco.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game_obj/obs-arbusto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game_obj/obs-wallguy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/hometile.png" type="Texture" id=7]
 [ext_resource path="res://victory.gd" type="Script" id=8]
 [ext_resource path="res://SummonWolf.gd" type="Script" id=9]
 [ext_resource path="res://assets/fx/Uivo!.wav" type="AudioStream" id=10]
@@ -64,122 +64,139 @@ position = Vector2( 96, 480 )
 position = Vector2( 96, 416 )
 
 [node name="bush11" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -2272 )
+position = Vector2( 224, -1184 )
 
 [node name="bush48" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -3488 )
+position = Vector2( 96, -2080 )
 
 [node name="bush55" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -2848 )
+position = Vector2( 96, -1568 )
 
 [node name="bush49" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3488 )
+position = Vector2( 352, -2080 )
 
 [node name="bush56" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -2848 )
+position = Vector2( 352, -1568 )
 
 [node name="bush45" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3552 )
+position = Vector2( 352, -2144 )
 
 [node name="bush53" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -2912 )
+position = Vector2( 352, -1632 )
 
 [node name="bush47" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -3552 )
+position = Vector2( 96, -2144 )
 
 [node name="bush57" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -2912 )
+position = Vector2( 96, -1632 )
 
 [node name="bush46" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -3616 )
+position = Vector2( 96, -2208 )
 
 [node name="bush54" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -2976 )
+position = Vector2( 96, -1696 )
 
 [node name="bush44" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -3616 )
+position = Vector2( 352, -2208 )
 
 [node name="bush52" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -2976 )
+position = Vector2( 352, -1696 )
 
 [node name="bush80" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -7648 )
+position = Vector2( 96, -6880 )
 
 [node name="bush87" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 160, -7648 )
+position = Vector2( 160, -6880 )
 
 [node name="bush92" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -7648 )
+position = Vector2( 288, -6880 )
 
 [node name="bush93" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -7648 )
+position = Vector2( 224, -6880 )
 
 [node name="bush103" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -7840 )
+position = Vector2( 224, -7072 )
 
 [node name="bush104" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 160, -7840 )
+position = Vector2( 160, -7072 )
 
 [node name="bush105" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -7840 )
+position = Vector2( 288, -7072 )
 
 [node name="bush108" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -7904 )
+position = Vector2( 224, -7264 )
 
 [node name="bush109" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -7968 )
+position = Vector2( 288, -7264 )
 
 [node name="bush112" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -7456 )
+position = Vector2( 352, -6688 )
 
 [node name="bush82" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -7520 )
+position = Vector2( 96, -6752 )
 
 [node name="bush88" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -7584 )
+position = Vector2( 96, -6816 )
 
 [node name="bush111" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -7456 )
+position = Vector2( 96, -6688 )
 
 [node name="bush61" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 160, -5344 )
+position = Vector2( 160, -4000 )
 
 [node name="bush66" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 160, -5408 )
+position = Vector2( 160, -4064 )
 
 [node name="bush35" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -5280 )
+position = Vector2( 224, -3936 )
 
 [node name="bush60" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -5344 )
+position = Vector2( 224, -4000 )
 
 [node name="bush64" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -5408 )
+position = Vector2( 224, -4064 )
 
 [node name="bush70" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -5472 )
+position = Vector2( 224, -4128 )
+
+[node name="bush71" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, -4896 )
+
+[node name="bush72" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -5280 )
 
 [node name="bush38" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -5344 )
+position = Vector2( 288, -4000 )
 
 [node name="bush65" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -5408 )
+position = Vector2( 288, -4064 )
 
 [node name="bush26" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -7840 )
-
-[node name="hometile" type="Sprite" parent="constraints/bush26"]
-position = Vector2( -160, -544 )
-texture = ExtResource( 3 )
+position = Vector2( 351.137, -7069 )
 
 [node name="bush27" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -8032 )
+position = Vector2( 352, -7424 )
+
+[node name="bush32" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -7424 )
+
+[node name="bush33" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 224, -7424 )
+
+[node name="bush31" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, -7264 )
 
 [node name="bush29" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 352, -8096 )
 
 [node name="bush28" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 96, -8032 )
+position = Vector2( 96, -7264 )
+
+[node name="bush34" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -7648 )
+
+[node name="bush36" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -7648 )
 
 [node name="bush30" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 96, -8096 )
@@ -246,137 +263,189 @@ shape = SubResource( 1 )
 position = Vector2( 64, -4032 )
 shape = SubResource( 1 )
 
-[node name="arvore4" parent="constraints" instance=ExtResource( 4 )]
-position = Vector2( 224, -2912 )
+[node name="arvore4" parent="constraints" instance=ExtResource( 3 )]
+position = Vector2( 224, -1632 )
 
-[node name="arvore5" parent="constraints" instance=ExtResource( 4 )]
-position = Vector2( 224, -160 )
+[node name="arvore5" parent="constraints" instance=ExtResource( 3 )]
+position = Vector2( 224, -32 )
 perma = true
 
-[node name="arvore6" parent="constraints" instance=ExtResource( 4 )]
-position = Vector2( 160, -6240 )
-
-[node name="tronco" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 160, -4576 )
-
-[node name="tronco6" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 160, -4448 )
-
-[node name="tronco15" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -6688 )
-
-[node name="tronco5" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 160, -4192 )
-
-[node name="tronco3" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 160, -3936 )
-
-[node name="tronco8" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 160, -800 )
+[node name="arvore6" parent="constraints" instance=ExtResource( 3 )]
+position = Vector2( 224, -5600 )
 perma = true
 
-[node name="tronco9" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -928 )
+[node name="tronco" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -3104 )
+
+[node name="tronco6" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -2976 )
+
+[node name="tronco15" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -5280 )
+
+[node name="tronco5" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -2720 )
+
+[node name="tronco3" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -2464 )
+
+[node name="tronco8" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 160, -288 )
+perma = true
+
+[node name="tronco9" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 288, -416 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 perma = true
 
-[node name="tronco2" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -4640 )
+[node name="tronco2" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 288, -3168 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
-[node name="tronco7" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -4512 )
+[node name="tronco7" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 288, -3040 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
-[node name="tronco17" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 224, -7968 )
+[node name="tronco17" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 230.701, -7584 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
-[node name="tronco14" parent="constraints" instance=ExtResource( 5 )]
+[node name="tronco14" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 288, -4896 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+state = false
+
+[node name="tronco4" parent="constraints" instance=ExtResource( 4 )]
+position = Vector2( 288, -2592 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+state = false
+
+[node name="arbusto" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 224, -2144 )
+
+[node name="arbusto2" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 224, -5088 )
+
+[node name="arbusto5" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 160, -6112 )
+perma = true
+
+[node name="arbusto6" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 288, -6112 )
+state = false
+
+[node name="arbusto7" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 160, -6368 )
+
+[node name="arbusto8" parent="constraints" instance=ExtResource( 5 )]
 position = Vector2( 288, -6368 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
-state = false
-
-[node name="tronco4" parent="constraints" instance=ExtResource( 5 )]
-position = Vector2( 288, -4064 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
-state = false
-
-[node name="arbusto" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 224, -3552 )
-
-[node name="arbusto2" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 160, -6560 )
-
-[node name="arbusto5" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 160, -7072 )
-
-[node name="arbusto6" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 288, -7072 )
-state = false
-
-[node name="arbusto7" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 160, -7264 )
-state = false
-
-[node name="arbusto8" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 288, -7264 )
-
-[node name="arbusto3" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 160, -5792 )
-state = false
-
-[node name="arbusto4" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 288, -5920 )
-
-[node name="arbusto9" parent="constraints" instance=ExtResource( 6 )]
-position = Vector2( 224, -1568 )
 perma = true
 
-[node name="wallguy" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 352, -5280 )
+[node name="arbusto3" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 160, -4448 )
+state = false
 
-[node name="wallguy5" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 352, -7712 )
+[node name="arbusto4" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 288, -4576 )
 
-[node name="wallguy7" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 352, -2272 )
+[node name="arbusto9" parent="constraints" instance=ExtResource( 5 )]
+position = Vector2( 224, -864 )
 perma = true
 
-[node name="wallguy8" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 95.7843, -2272 )
+[node name="wallguy" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 351.137, -3936 )
+
+[node name="wallguy5" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 352, -6944 )
+
+[node name="wallguy9" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 350.922, -7200 )
+state = false
+
+[node name="wallguy11" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 352, -7328 )
+
+[node name="wallguy7" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 351.569, -1184 )
+perma = true
+
+[node name="Sprite" parent="constraints/wallguy7" index="0"]
+position = Vector2( 15, 3 )
+
+[node name="wallguy8" parent="constraints" instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 96, -1184 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 perma = true
 
-[node name="wallguy3" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 352, -5472 )
+[node name="Sprite" parent="constraints/wallguy8" index="0"]
+position = Vector2( 25, 0 )
+
+[node name="wallguy3" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 352, -4128 )
 state = false
 
-[node name="wallguy2" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 96, -5280 )
+[node name="wallguy13" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 350.706, -5280 )
+state = false
+
+[node name="wallguy14" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 352, -5664 )
+
+[node name="wallguy16" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 350.49, -5533 )
+state = false
+
+[node name="wallguy2" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -3936 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
-[node name="wallguy6" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 96, -7776 )
+[node name="wallguy6" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -7008 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
-[node name="wallguy4" parent="constraints" instance=ExtResource( 7 )]
-position = Vector2( 96, -5472 )
+[node name="wallguy10" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -7136 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
+
+[node name="wallguy4" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -4128 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="wallguy12" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -4896 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="wallguy15" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -5533 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="wallguy17" parent="constraints" instance=ExtResource( 6 )]
+position = Vector2( 96, -5664 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+state = false
+
+[node name="hometile" type="Sprite" parent="constraints"]
+position = Vector2( 192, -8416 )
+texture = ExtResource( 7 )
 
 [node name="victory" type="Area2D" parent="."]
 editor/display_folded = true
@@ -390,7 +459,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="SummonWolf" type="Area2D" parent="."]
-position = Vector2( 224, -4992 )
+position = Vector2( 224, -3552 )
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SummonWolf"]
@@ -399,3 +468,7 @@ shape = SubResource( 3 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SummonWolf"]
 stream = ExtResource( 10 )
 
+
+[editable path="constraints/wallguy7"]
+
+[editable path="constraints/wallguy8"]
