@@ -71,7 +71,7 @@ position = Vector2( 222.412, -8608 )
 [node name="constraints" type="YSort" parent="."]
 
 [node name="Player" parent="constraints" instance=ExtResource( 1 )]
-position = Vector2( 224, -8000 )
+position = Vector2( 224, 417 )
 step_pause = false
 
 [node name="bush" parent="constraints" instance=ExtResource( 2 )]
