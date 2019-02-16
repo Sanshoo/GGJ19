@@ -25,18 +25,18 @@ extents = Vector2( 32, 1408 )
 
 extents = Vector2( 95, 30 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 
 size = 43
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 extents = Vector2( 160, 32 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Area2D
 
@@ -53,7 +53,7 @@ func _on_body_entered(body):
 				Tween.TRANS_QUAD, Tween.EASE_OUT)
 		tween.start()"
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 extents = Vector2( 92.9388, 29.3447 )
 
@@ -207,7 +207,7 @@ position = Vector2( 288, -4000 )
 position = Vector2( 288, -4064 )
 
 [node name="bush26" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 350.412, -7040 )
+position = Vector2( 351.569, -7072 )
 
 [node name="bush27" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 350.412, -7392 )
@@ -436,15 +436,27 @@ perma = true
 [node name="wallguy" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 351.137, -3936 )
 
+[node name="Sprite" parent="constraints/wallguy" index="0"]
+offset = Vector2( 3, 0 )
+
 [node name="wallguy5" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 352, -6944 )
+
+[node name="Sprite" parent="constraints/wallguy5" index="0"]
+position = Vector2( -15, 3 )
 
 [node name="wallguy9" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 350.922, -7200 )
 state = false
 
+[node name="Sprite" parent="constraints/wallguy9" index="0"]
+position = Vector2( 10, 3 )
+
 [node name="wallguy11" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 352, -7328 )
+
+[node name="Sprite" parent="constraints/wallguy11" index="0"]
+position = Vector2( 2, 3 )
 
 [node name="wallguy7" parent="constraints" instance=ExtResource( 6 )]
 editor/display_folded = true
@@ -472,12 +484,25 @@ state = false
 position = Vector2( 350.706, -5280 )
 state = false
 
+[node name="Sprite" parent="constraints/wallguy13" index="0"]
+offset = Vector2( 5, 0 )
+
 [node name="wallguy14" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 352, -5664 )
+
+[node name="Sprite" parent="constraints/wallguy14" index="0"]
+position = Vector2( 16, 0 )
+offset = Vector2( -7, 0 )
 
 [node name="wallguy16" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 350.49, -5533 )
 state = false
+
+[node name="Sprite" parent="constraints/wallguy16" index="0"]
+position = Vector2( 3, 0 )
+
+[node name="CollisionShape2D" parent="constraints/wallguy16/Hitbox" index="0"]
+position = Vector2( -30.8877, -3 )
 
 [node name="wallguy2" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -3936 )
@@ -485,16 +510,25 @@ rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
+[node name="Sprite" parent="constraints/wallguy2" index="0"]
+offset = Vector2( 15, 0 )
+
 [node name="wallguy6" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -7008 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
 
+[node name="Sprite" parent="constraints/wallguy6" index="0"]
+position = Vector2( -18, 26 )
+
 [node name="wallguy10" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -7136 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
+
+[node name="Sprite" parent="constraints/wallguy10" index="0"]
+position = Vector2( 2.588, 0 )
 
 [node name="wallguy4" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -4128 )
@@ -506,16 +540,28 @@ position = Vector2( 96, -4896 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
+[node name="Sprite" parent="constraints/wallguy12" index="0"]
+offset = Vector2( 12, 0 )
+
 [node name="wallguy15" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -5533 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
+
+[node name="Sprite" parent="constraints/wallguy15" index="0"]
+position = Vector2( 2.588, 0 )
 
 [node name="wallguy17" parent="constraints" instance=ExtResource( 6 )]
 position = Vector2( 96, -5664 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 state = false
+
+[node name="Sprite" parent="constraints/wallguy17" index="0"]
+position = Vector2( -17, 0 )
+
+[node name="CollisionShape2D" parent="constraints/wallguy17/Hitbox" index="0"]
+position = Vector2( -32.3977, 0 )
 
 [node name="hometile" type="Sprite" parent="constraints"]
 position = Vector2( 192, -8352 )
@@ -556,7 +602,7 @@ margin_left = -30.0
 margin_top = -96.0
 margin_right = 10.0
 margin_bottom = -52.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 
 [node name="thankyou" type="Sprite" parent="victory"]
@@ -575,12 +621,11 @@ wait_time = 3600.0
 autostart = true
 
 [node name="SummonWolf" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 224, -3552 )
+position = Vector2( 224, -3550 )
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SummonWolf"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SummonWolf"]
 stream = ExtResource( 16 )
@@ -589,14 +634,40 @@ stream = ExtResource( 16 )
 
 [node name="relax" type="Area2D" parent="."]
 position = Vector2( 224, -7584 )
-script = SubResource( 4 )
+script = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="relax"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="relax"]
 
 
+[editable path="constraints/wallguy"]
+
+[editable path="constraints/wallguy5"]
+
+[editable path="constraints/wallguy9"]
+
+[editable path="constraints/wallguy11"]
+
 [editable path="constraints/wallguy7"]
 
 [editable path="constraints/wallguy8"]
+
+[editable path="constraints/wallguy13"]
+
+[editable path="constraints/wallguy14"]
+
+[editable path="constraints/wallguy16"]
+
+[editable path="constraints/wallguy2"]
+
+[editable path="constraints/wallguy6"]
+
+[editable path="constraints/wallguy10"]
+
+[editable path="constraints/wallguy12"]
+
+[editable path="constraints/wallguy15"]
+
+[editable path="constraints/wallguy17"]
