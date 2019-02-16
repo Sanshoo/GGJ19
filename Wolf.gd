@@ -3,7 +3,7 @@ extends Node2D
 var game
 var player
 var camera
-var active = false
+var active = true setget change_active
 var nearby = false
 var distance_dif
 var wolf_speed = 68
@@ -12,6 +12,9 @@ func _ready():
 	game = get_tree().get_nodes_in_group("master")[0]
 	player = get_tree().get_nodes_in_group("player")[0]
 	camera = get_tree().get_nodes_in_group("camera")[0]
+
+func change_active(value):
+	active = value
 
 func _process(delta):
 	distance_dif = self.global_position.y - player.global_position.y

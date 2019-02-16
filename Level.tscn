@@ -30,6 +30,8 @@ extents = Vector2( 95, 30 )
 size = 43
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 12 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -41,6 +43,7 @@ extents = Vector2( 160, 32 )
 script/source = "extends Area2D
 
 onready var ost = get_tree().get_nodes_in_group(\"ost\")[0]
+onready var wolf = get_tree().get_nodes_in_group(\"wolf\")[0]
 onready var tween = $Tween
 
 func _ready():
@@ -49,6 +52,8 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group(\"player\"):
 		body.sanity_step = 0
+		wolf.visible = false
+		wolf.active = false
 		tween.interpolate_property(ost, \"volume_db\", 0, -12, 1.0,
 				Tween.TRANS_QUAD, Tween.EASE_OUT)
 		tween.start()"
@@ -71,7 +76,7 @@ position = Vector2( 222.412, -8608 )
 [node name="constraints" type="YSort" parent="."]
 
 [node name="Player" parent="constraints" instance=ExtResource( 1 )]
-position = Vector2( 224, 417 )
+position = Vector2( 160.49, -7327 )
 step_pause = false
 
 [node name="bush" parent="constraints" instance=ExtResource( 2 )]
