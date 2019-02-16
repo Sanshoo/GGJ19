@@ -4,7 +4,7 @@ var title
 export (String) var c_mortis
 
 func _ready():
-	title = preload("res://Tutorial.tscn")
+	title = preload("res://MainMenu.tscn")
 	$gameover.modulate.a = 0
 	$wolf.modulate.a = 0
 	$sanity.modulate.a = 0
