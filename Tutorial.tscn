@@ -258,6 +258,7 @@ region_rect = Rect2( 0, 0, 100, 10000 )
 [node name="Wolf" parent="." groups=[
 "wolf",
 ] instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 224, -2752 )
 
 [node name="OST" type="AudioStreamPlayer" parent="." groups=[
