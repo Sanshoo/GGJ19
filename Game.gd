@@ -9,13 +9,16 @@ var win_scene
 var alt_tex
 var def_tex
 var out_of_loop = true
-var win
+var tween
+var win = false
 
 func _ready():
 	$OST.connect("finished", self, "ost_mng")
 	win_scene = preload("res://GameWon.tscn")
 	def_tex = load("res://assets/sanity-bar/danger.png")
 	alt_tex = load("res://assets/sanity-bar/progress.png")
+	tween = Tween.new()
+	add_child(tween)
 
 func _process(delta):
 	# sanitybar
@@ -31,6 +34,10 @@ func _process(delta):
 
 	if player.sanity <= 0 and game_state == "ingame":
 		game_over("sanity")
+	if win:
+		tween.interpolate_property(sanitybar, "modulate:a", 1.0, 0, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+		tween.start()
+		win = false
 
 func ost_mng():
 	if out_of_loop:

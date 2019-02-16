@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game_obj/cons-bush.tscn" type="PackedScene" id=2]
@@ -8,8 +8,14 @@
 [ext_resource path="res://game_obj/obs-wallguy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/hometile.png" type="Texture" id=7]
 [ext_resource path="res://victory.gd" type="Script" id=8]
-[ext_resource path="res://SummonWolf.gd" type="Script" id=9]
-[ext_resource path="res://assets/fx/Uivo!.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/ost/Vitória.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/offgame/victory-yourehome.png" type="Texture" id=10]
+[ext_resource path="res://assets/offgame/victory-congratulations.png" type="Texture" id=11]
+[ext_resource path="res://assets/offgame/04B_03__.TTF" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/offgame/victory-thankyou.png" type="Texture" id=13]
+[ext_resource path="res://assets/offgame/victory-pressx.png" type="Texture" id=14]
+[ext_resource path="res://SummonWolf.gd" type="Script" id=15]
+[ext_resource path="res://assets/fx/Uivo!.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,9 +25,37 @@ extents = Vector2( 32, 1408 )
 
 extents = Vector2( 95, 30 )
 
+[sub_resource type="DynamicFont" id=6]
+
+size = 43
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
 [sub_resource type="RectangleShape2D" id=3]
 
 extents = Vector2( 160, 32 )
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Area2D
+
+onready var ost = get_tree().get_nodes_in_group(\"ost\")[0]
+onready var tween = $Tween
+
+func _ready():
+	connect(\"body_entered\", self, \"_on_body_entered\")
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		body.sanity_step = 0
+		tween.interpolate_property(ost, \"volume_db\", 0, -12, 1.0,
+				Tween.TRANS_QUAD, Tween.EASE_OUT)
+		tween.start()"
+
+[sub_resource type="RectangleShape2D" id=5]
+
+extents = Vector2( 92.9388, 29.3447 )
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -37,7 +71,8 @@ position = Vector2( 222.412, -8608 )
 [node name="constraints" type="YSort" parent="."]
 
 [node name="Player" parent="constraints" instance=ExtResource( 1 )]
-position = Vector2( 224, 417 )
+position = Vector2( 224, -8000 )
+step_pause = false
 
 [node name="bush" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 96, 544 )
@@ -172,16 +207,16 @@ position = Vector2( 288, -4000 )
 position = Vector2( 288, -4064 )
 
 [node name="bush26" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 351.137, -7069 )
+position = Vector2( 350.412, -7040 )
 
 [node name="bush27" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 352, -7424 )
+position = Vector2( 350.412, -7392 )
 
 [node name="bush32" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 288, -7424 )
+position = Vector2( 286.412, -7392 )
 
 [node name="bush33" parent="constraints" instance=ExtResource( 2 )]
-position = Vector2( 224, -7424 )
+position = Vector2( 222.412, -7392 )
 
 [node name="bush31" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 160, -7264 )
@@ -193,10 +228,46 @@ position = Vector2( 352, -8096 )
 position = Vector2( 96, -7264 )
 
 [node name="bush34" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -7584 )
+
+[node name="bush37" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, -7648 )
+
+[node name="bush39" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -7712 )
+
+[node name="bush40" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 96, -7648 )
 
-[node name="bush36" parent="constraints" instance=ExtResource( 2 )]
+[node name="bush41" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 352, -7648 )
+
+[node name="bush42" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -7840 )
+
+[node name="bush43" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -7904 )
+
+[node name="bush50" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -7968 )
+
+[node name="bush63" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -7904 )
+
+[node name="bush51" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 288, -8032 )
+
+[node name="bush58" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, -8032 )
+
+[node name="bush59" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 160, -7968 )
+
+[node name="bush62" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 96, -8032 )
+
+[node name="bush36" parent="constraints" instance=ExtResource( 2 )]
+position = Vector2( 352, -7584 )
 
 [node name="bush30" parent="constraints" instance=ExtResource( 2 )]
 position = Vector2( 96, -8096 )
@@ -208,6 +279,7 @@ position = Vector2( 352, 416 )
 position = Vector2( 288, 480 )
 
 [node name="wall-left" type="StaticBody2D" parent="constraints"]
+editor/display_folded = true
 position = Vector2( 32, -3488 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="constraints/wall-left"]
@@ -236,6 +308,7 @@ position = Vector2( -64, -3904 )
 shape = SubResource( 1 )
 
 [node name="wall-right" type="StaticBody2D" parent="constraints"]
+editor/display_folded = true
 position = Vector2( 416, -3488 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="constraints/wall-right"]
@@ -312,7 +385,7 @@ scale = Vector2( 1, -1 )
 state = false
 
 [node name="tronco17" parent="constraints" instance=ExtResource( 4 )]
-position = Vector2( 230.701, -7584 )
+position = Vector2( 230.701, -7520 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
@@ -374,6 +447,7 @@ state = false
 position = Vector2( 352, -7328 )
 
 [node name="wallguy7" parent="constraints" instance=ExtResource( 6 )]
+editor/display_folded = true
 position = Vector2( 351.569, -1184 )
 perma = true
 
@@ -444,11 +518,10 @@ scale = Vector2( 1, -1 )
 state = false
 
 [node name="hometile" type="Sprite" parent="constraints"]
-position = Vector2( 192, -8416 )
+position = Vector2( 192, -8352 )
 texture = ExtResource( 7 )
 
 [node name="victory" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 224, -8128 )
 script = ExtResource( 8 )
 __meta__ = {
@@ -458,17 +531,70 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="victory"]
 shape = SubResource( 2 )
 
+[node name="Tween" type="Tween" parent="victory"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="victory"]
+stream = ExtResource( 9 )
+volume_db = -26.0
+autoplay = true
+
+[node name="yourehome" type="Sprite" parent="victory"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -1.58801, -416 )
+texture = ExtResource( 10 )
+
+[node name="congratulations" type="Sprite" parent="victory"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -1.58801, -352 )
+texture = ExtResource( 11 )
+
+[node name="time" type="Label" parent="victory"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -30.0
+margin_top = -96.0
+margin_right = 10.0
+margin_bottom = -52.0
+custom_fonts/font = SubResource( 6 )
+align = 1
+
+[node name="thankyou" type="Sprite" parent="victory"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -254 )
+scale = Vector2( 0.982642, 0.982642 )
+texture = ExtResource( 13 )
+
+[node name="pressx" type="Sprite" parent="victory"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -1.588, -147 )
+texture = ExtResource( 14 )
+
+[node name="Timer" type="Timer" parent="victory"]
+wait_time = 3600.0
+autostart = true
+
 [node name="SummonWolf" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 224, -3552 )
-script = ExtResource( 9 )
+script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SummonWolf"]
 shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SummonWolf"]
-stream = ExtResource( 10 )
+stream = ExtResource( 16 )
 
 [node name="Tween" type="Tween" parent="SummonWolf"]
+
+[node name="relax" type="Area2D" parent="."]
+position = Vector2( 224, -7584 )
+script = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="relax"]
+shape = SubResource( 5 )
+
+[node name="Tween" type="Tween" parent="relax"]
 
 
 [editable path="constraints/wallguy7"]

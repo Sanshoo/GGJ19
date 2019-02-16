@@ -12,7 +12,6 @@ func _ready():
 	game = get_tree().get_nodes_in_group("master")[0]
 	player = get_tree().get_nodes_in_group("player")[0]
 	camera = get_tree().get_nodes_in_group("camera")[0]
-	
 
 func _process(delta):
 	distance_dif = self.global_position.y - player.global_position.y
