@@ -30,18 +30,22 @@ func _physics_process(delta):
 	if movable:
 		if Input.is_action_pressed("ui_up"):
 			$Sprite.animation = "up"
+			$Sprite.flip_h = false
 			to_be_moved = true
 			move_vec.y -= tile_size
 		elif Input.is_action_pressed("ui_left"):
-			$Sprite.animation = "left"
+			$Sprite.animation = "side"
+			$Sprite.flip_h = true
 			to_be_moved = true
 			move_vec.x -= tile_size
 		elif Input.is_action_pressed("ui_right"):
-			$Sprite.animation = "right"
+			$Sprite.animation = "side"
+			$Sprite.flip_h = false
 			to_be_moved = true
 			move_vec.x += tile_size
 		elif Input.is_action_pressed("ui_down"):
 			$Sprite.animation = "down"
+			$Sprite.flip_h = false
 			to_be_moved = true
 			move_vec.y += tile_size
 		
@@ -95,10 +99,11 @@ func hit():
 			move_and_collide( Vector2(0, tile_size))
 		"down":
 			move_and_collide( Vector2(0, -tile_size))
-		"right":
-			move_and_collide( Vector2(-tile_size, 0))
-		"left":
-			move_and_collide( Vector2(tile_size, 0))
+		"side":
+			if $Sprite.flip_h:
+				move_and_collide( Vector2(tile_size, 0))
+			else:
+				move_and_collide( Vector2(-tile_size, 0))
 			
 	yield(get_tree().create_timer(0.8), "timeout")
 	stunned = false
